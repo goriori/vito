@@ -1,0 +1,15 @@
+@import 'variables';
+
+.container {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  @media (max-width: $md1 + px) {
+  }
+  @media (max-width: $md2 + px) {
+  }
+  @media (max-width: $md3 + px) {
+  }
+  @media (max-width: $md4 + px) {
+  }
+}

@@ -1,0 +1,29 @@
+@import 'fonts';
+@import 'base';
+@import 'variables';
+@import 'null';
+@import 'animation';
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &-top {
+    flex: 1 0 10vh;
+  }
+
+  &-center {
+    flex: 1 0 80vh;
+  }
+
+  &-bottom {
+    flex: 1 0 10vh;
+  }
+}
