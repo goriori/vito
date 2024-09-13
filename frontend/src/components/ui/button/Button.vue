@@ -4,7 +4,7 @@ import CircleSpinner from '@/components/ui/spiners/CircleSpinner.vue'
 type BProps = {
   outline?: boolean
   isLoading?: boolean
-  background?: 'primary' | 'secondary' | 'thridy' | 'none'
+  variant?: 'primary' | 'secondary'
 }
 type BEmits = {
   (eventName: 'onClick'): void
@@ -17,7 +17,7 @@ const onClick = () => emits('onClick')
 <template>
   <button
     type="submit"
-    :class="['btn', background, { outline }]"
+    :class="['btn', variant, { outline }]"
     @click="onClick"
     v-ripple
   >
@@ -40,7 +40,7 @@ const onClick = () => emits('onClick')
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  border: none;
+  border: 1px solid transparent;
   padding: 8px;
   color: #000;
   cursor: pointer;
@@ -54,18 +54,18 @@ const onClick = () => emits('onClick')
 }
 
 .outline {
-  border: 1px solid;
+  background: none !important;
 }
 
 .primary {
+  border-color: var(--primary-color);
   background-color: var(--primary-color);
 }
 
 .secondary {
+  border-color: var(--secondary-color);
   background-color: var(--secondary-color);
 }
 
-.thridy {
-  background-color: var(--thrid-color);
-}
+
 </style>

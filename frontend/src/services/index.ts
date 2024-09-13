@@ -29,7 +29,7 @@ export class Service {
     } catch (e) {
       console.log(e)
       console.error(new Error('error request'))
-      return false
+      throw false
     }
   }
 }

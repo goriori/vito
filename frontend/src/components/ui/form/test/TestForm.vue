@@ -21,7 +21,7 @@ const onSubmit = (fields: HTMLInputElement[]) => {
 </script>
 
 <template>
-  <Form no-validate @on-submit="onSubmit">
+  <Form no-validate class="test-form" @on-submit="onSubmit" >
     <Input
       v-model="form.email.value"
       type="email"
@@ -40,8 +40,14 @@ const onSubmit = (fields: HTMLInputElement[]) => {
       placeholder="Введите пароль"
       required
     />
-    <Button background="secondary" title="Отправить" />
+    <Button variant="secondary">Отправить</Button>
   </Form>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.test-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+</style>

@@ -22,9 +22,15 @@ const onSubmit = (event: Event) => {
 </script>
 
 <template>
-  <form :novalidate="noValidate" @submit.prevent="onSubmit">
+  <form :novalidate="noValidate" class="form" @submit.prevent="onSubmit">
     <slot />
   </form>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.form {
+  padding: 15px;
+  border-radius: 16px;
+  background-color: gray;
+}
+</style>

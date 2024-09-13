@@ -29,7 +29,7 @@ const getSome = () => {
 
 <template>
   <Button
-    background="secondary"
+    variant="secondary"
     :is-loading="isLoading"
     @click="getSome"
     class="btn"

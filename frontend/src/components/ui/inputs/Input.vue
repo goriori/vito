@@ -10,6 +10,7 @@ type IProps = {
   placeholder?: string
   required?: boolean
   disabled?: boolean
+  outlined?: boolean
 }
 type IEmits = {
   (eventName: 'update:modelValue', value: string): void
@@ -40,7 +41,7 @@ const onInput = (event: Event) => {
     :type="type"
     :placeholder="placeholder"
     :disabled="disabled"
-    :class="['input', textPosition]"
+    :class="['input', textPosition, { outlined }]"
     :min-length="minLength"
     :max-length="maxLength"
     required
@@ -58,7 +59,7 @@ const onInput = (event: Event) => {
   text-align: start;
   padding: 10px;
   border-radius: 5px;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -78,6 +79,10 @@ const onInput = (event: Event) => {
 
   &::placeholder {
     font-size: 16px;
+  }
+
+  &.outlined {
+    border-color: #000;
   }
 }
 

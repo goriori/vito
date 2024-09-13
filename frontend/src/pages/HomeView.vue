@@ -20,25 +20,27 @@ const openErrorAlert = () => {
 
 <template>
   <div class="page container">
-    <section class="page-top">top</section>
+    <section class="page-top"></section>
     <section class="page-center">
       <p>center</p>
       <GetData />
-      <Button background="primary" @click="openTestModal">open modal </Button>
-      <Button background="primary" @click="openErrorAlert"
+      <Button variant="primary" @click="openTestModal">open modal </Button>
+      <Button variant="primary" @click="openErrorAlert"
         >open error alert
       </Button>
-      <TestForm />
     </section>
-    <section class="page-bottom">bottom</section>
+    <section class="page-bottom"></section>
   </div>
 </template>
 
 <style scoped lang="scss">
 .page {
   &-center {
+    height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
   }
 }
