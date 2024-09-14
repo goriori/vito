@@ -1,11 +1,5 @@
 <script setup lang="ts">
-type FProps = {
-  noValidate?: boolean
-}
-
-type FEmits = {
-  (eventName: 'onSubmit', fields: HTMLInputElement[]): void
-}
+import { FEmits, FProps } from '@/components/ui/form/types.ts'
 
 defineProps<FProps>()
 const emits = defineEmits<FEmits>()
@@ -22,15 +16,16 @@ const onSubmit = (event: Event) => {
 </script>
 
 <template>
-  <form :novalidate="noValidate" class="form" @submit.prevent="onSubmit">
+  <form :novalidate="noValidate" @submit.prevent="onSubmit">
     <slot />
   </form>
 </template>
 
 <style scoped lang="scss">
-.form {
-  padding: 15px;
-  border-radius: 16px;
-  background-color: gray;
+form {
+  width: 100%;
+  padding: var(--space-lg);
+  border-radius: var(--radius-sm);
+  background-color: transparent;
 }
 </style>

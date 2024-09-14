@@ -1,14 +1,7 @@
 <script setup lang="ts">
 import CircleSpinner from '@/components/ui/spiners/CircleSpinner.vue'
+import { BEmits, BProps } from '@/components/ui/button/types.ts'
 
-type BProps = {
-  outline?: boolean
-  isLoading?: boolean
-  variant?: 'primary' | 'secondary'
-}
-type BEmits = {
-  (eventName: 'onClick'): void
-}
 defineProps<BProps>()
 const emits = defineEmits<BEmits>()
 const onClick = () => emits('onClick')
@@ -39,10 +32,10 @@ const onClick = () => emits('onClick')
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  border-radius: var(--radius-sm);
   border: 1px solid transparent;
   padding: 8px;
-  color: #000;
+  color: transparent;
   cursor: pointer;
   background-color: transparent;
   transition: var(--animation-time) all ease-in-out;
@@ -58,14 +51,26 @@ const onClick = () => emits('onClick')
 }
 
 .primary {
+  color: var(--fourth-color);
   border-color: var(--primary-color);
   background-color: var(--primary-color);
 }
 
 .secondary {
+  color: var(--fourth-color);
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);
 }
 
+.tertiary {
+  color: var(--fourth-color);
+  border-color: var(--thrid-color);
+  background-color: var(--thrid-color);
+}
 
+.quaternary {
+  color: var(--primary-color);
+  border-color: var(--fourth-color);
+  background-color: var(--fourth-color);
+}
 </style>

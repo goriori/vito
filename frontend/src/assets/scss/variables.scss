@@ -11,9 +11,24 @@ $md4: 768;
 $md5: 540;
 
 :root {
-  --primary-color: #3c68a2;
-  --secondary-color: #12a2ef;
-  --thrid-color: #000;
+  --primary-color: #000;
+  --secondary-color: #14213d;
+  --thrid-color: #fca311;
+  --fourth-color: #e5e5e5;
+}
+
+:root {
+  --space-sm: 10px;
+  --space-md: 15px;
+  --space-lg: 20px;
+  --space-xl: 25px;
+  --space-xs: 28px;
+}
+
+:root {
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
 }
 
 :root {

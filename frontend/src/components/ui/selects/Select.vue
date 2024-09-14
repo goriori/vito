@@ -1,26 +1,10 @@
 <script setup lang="ts">
 import { onMounted, Ref, ref } from 'vue'
+import { IEmits, SList, SProps } from '@/components/ui/selects/types.ts'
 
-type ListValue = string | number
-type IList = {
-  id: number
-  title: string
-  value: ListValue
-}
-
-type IProps = {
-  modelValue?: string
-  titles: string[]
-}
-
-type IEmits = {
-  (eventName: 'update:modelValue', value: ListValue): void
-  (eventName: 'onChange', value: ListValue): void
-}
-
-const props = defineProps<IProps>()
+const props = defineProps<SProps>()
 const emits = defineEmits<IEmits>()
-const list: Ref<IList[]> = ref([])
+const list: Ref<SList[]> = ref([])
 const targetElement: Ref<string | number> = ref('')
 
 const initList = () => {

@@ -1,14 +1,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
 import { gsap } from 'gsap'
-
-type AProps = {
-  color: 'default' | 'warning' | 'error'
-}
-type AEmits = {
-  (eventName: 'onClick'): void
-  (eventName: 'onTimeOut'): void
-}
+import { AEmits, AProps } from '@/components/ui/alert/types.ts'
 
 const TIME_OUT = 5000
 
@@ -45,8 +38,8 @@ onUnmounted(() => {
   left: 50%;
   transform: translate(-50%, 0);
   color: black;
-  padding: 10px;
-  border-radius: 8px;
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
   background-color: transparent;
 }
 

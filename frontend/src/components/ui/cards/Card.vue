@@ -1,9 +1,6 @@
 <script setup lang="ts">
-type CProps = {
-  rounded?: boolean
-  variant?: 'primary' | 'secondary'
-  outlined?: boolean
-}
+import { CProps } from '@/components/ui/cards/types.ts'
+
 defineProps<CProps>()
 </script>
 
@@ -27,10 +24,10 @@ defineProps<CProps>()
   cursor: pointer;
   color: #000;
   max-width: 200px;
-  padding: 10px;
+  padding: var(--space-sm);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-sm);
   transition: var(--animation-time) all ease-in-out;
   background-color: transparent;
   border: 1px solid transparent;
@@ -40,7 +37,7 @@ defineProps<CProps>()
   }
 
   &.rounded {
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
   }
 
   &.outlined {

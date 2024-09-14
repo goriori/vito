@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import BackspaceIcon from '@/components/ui/icons/BackspaceIcon.vue'
+import {KEmits} from "@/components/ui/keyboard/types.ts";
 
-type KEmits = {
-  (name: 'onPress', key: string): void
-  (name: 'onEnter'): void
-  (name: 'onBackspace'): void
-}
+
 
 const keysRu = ref([
   ['й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', '<='],

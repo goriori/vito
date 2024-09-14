@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-const HomeView = () => import('@/pages/HomeView.vue')
-const TestView = () => import('@/pages/TestView.vue')
+const AuthView = () => import('@/pages/auth/Authorization.vue')
 const UiView = () => import('@/pages/ui/Ui.vue')
 const ProjectInfoView = () => import('@/pages/project-info/ProjectInfo.vue')
 const router = createRouter({
@@ -9,19 +8,11 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'auth',
       meta: {
-        name: 'Главная страница',
+        name: 'Авторизация',
       },
-      component: HomeView,
-    },
-    {
-      path: '/test',
-      name: 'test',
-      meta: {
-        name: 'Тестовая страница',
-      },
-      component: TestView,
+      component: AuthView,
     },
     {
       path: '/ui',

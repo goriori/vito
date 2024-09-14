@@ -1,44 +1,24 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { IEmits, IProps } from '@/components/ui/inputs/types.ts'
 
-type IProps = {
-  type: 'text' | 'number' | 'phone' | 'email' | 'password' | 'search'
-  textPosition?: 'left' | 'center' | 'right'
-  minLength?: number
-  maxLength?: number
-  modelValue?: string | number
-  placeholder?: string
-  required?: boolean
-  disabled?: boolean
-  outlined?: boolean
-}
-type IEmits = {
-  (eventName: 'update:modelValue', value: string): void
-  (eventName: 'onChange', value: string | number): void
-  (eventName: 'onInput', value: string | number): void
-}
-const props = defineProps<IProps>()
+defineProps<IProps>()
 const emits = defineEmits<IEmits>()
 
-const modelValue = ref(props.modelValue)
-
 const onChange = (event: Event) => {
-  modelValue.value = (event.target as HTMLInputElement).value
-  emits('update:modelValue', modelValue.value)
-  emits('onChange', modelValue.value)
+  emits('update:modelValue', (event.target as HTMLInputElement).value)
+  emits('onChange', (event.target as HTMLInputElement).value)
 }
 
 const onInput = (event: Event) => {
-  modelValue.value = (event.target as HTMLInputElement).value
-  emits('update:modelValue', modelValue.value)
-  emits('onInput', modelValue.value)
+  emits('update:modelValue', (event.target as HTMLInputElement).value)
+  emits('onInput', (event.target as HTMLInputElement).value)
 }
 </script>
 
 <template>
   <input
-    v-model="modelValue"
     :type="type"
+    :value="modelValue"
     :placeholder="placeholder"
     :disabled="disabled"
     :class="['input', textPosition, { outlined }]"
@@ -57,8 +37,8 @@ const onInput = (event: Event) => {
   justify-content: center;
   align-items: center;
   text-align: start;
-  padding: 10px;
-  border-radius: 5px;
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
   border: 1px solid transparent;
 
   &::-webkit-outer-spin-button,

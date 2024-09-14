@@ -1,12 +1,7 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, onUnmounted } from 'vue'
+import { onMounted } from 'vue'
 import { gsap } from 'gsap'
-
-type MEmits = {
-  (eventName: 'onClickBackground'): void
-  (eventName: 'onClickContent'): void
-  (eventName: 'onMount'): void
-}
+import { MEmits } from '@/components/ui/modal/types.ts'
 
 const emits = defineEmits<MEmits>()
 const tl = gsap.timeline()
