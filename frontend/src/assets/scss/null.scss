@@ -37,13 +37,14 @@ section {
 }
 
 html {
-  font-size: $font-size;
+  font-size: var(--primary-font-size);
 }
 
 html,
 body {
   height: 100%;
   color: $black;
+  @include scrollbar();
 }
 
 body {

@@ -14,6 +14,8 @@ import TestForm from '@/components/ui/form/test/TestForm.vue'
         <div class="item-list">
           <Button variant="primary" class="list-item">Primary</Button>
           <Button variant="secondary" class="list-item">Secondary</Button>
+          <Button variant="tertiary" class="list-item">Tertiary</Button>
+          <Button variant="quaternary" class="list-item">Quaternary</Button>
           <Button variant="secondary" outline class="list-item"
             >Outlined
           </Button>
@@ -35,12 +37,17 @@ import TestForm from '@/components/ui/form/test/TestForm.vue'
             <template #card-center>Center Card</template>
             <template #card-bottom>Bottom card</template>
           </Card>
-          <Card variant="secondary" outlined rounded>
+          <Card variant="tertiary" rounded>
             <template #card-top>Top card</template>
             <template #card-center>Center Card</template>
             <template #card-bottom>Bottom card</template>
           </Card>
-          <Card variant="primary" outlined rounded>
+          <Card variant="quaternary" rounded>
+            <template #card-top>Top card</template>
+            <template #card-center>Center Card</template>
+            <template #card-bottom>Bottom card</template>
+          </Card>
+          <Card variant="tertiary" outlined rounded>
             <template #card-top>Top card</template>
             <template #card-center>Center Card</template>
             <template #card-bottom>Bottom card</template>
@@ -94,6 +101,7 @@ import TestForm from '@/components/ui/form/test/TestForm.vue'
 
 <style scoped lang="scss">
 .page {
+  background-color: var(--secondary-color);
   &-center {
     height: 100%;
     display: flex;

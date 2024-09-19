@@ -52,6 +52,7 @@ const clearForm = () => {
   background-color: var(--fourth-color);
 
   &-title {
+    color: var(--primary-color);
     text-align: center;
     font-weight: bold;
     font-size: 25px;

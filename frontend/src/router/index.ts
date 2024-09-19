@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 const AuthView = () => import('@/pages/auth/Authorization.vue')
+const ProjectsView = () => import('@/pages/projects/Projects.vue')
+const ProjectView = () => import('@/pages/projects/Project.vue')
 const UiView = () => import('@/pages/ui/Ui.vue')
 const ProjectInfoView = () => import('@/pages/project-info/ProjectInfo.vue')
 const router = createRouter({
@@ -13,6 +15,22 @@ const router = createRouter({
         name: 'Авторизация',
       },
       component: AuthView,
+    },
+    {
+      path: '/projects',
+      name: 'projects',
+      meta: {
+        name: 'Проекты',
+      },
+      component: ProjectsView,
+    },
+    {
+      path: '/project/:id',
+      name: 'project',
+      meta: {
+        name: 'Проект',
+      },
+      component: ProjectView,
     },
     {
       path: '/ui',

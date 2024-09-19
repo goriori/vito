@@ -1,5 +1,5 @@
 export type CProps = {
   rounded?: boolean
-  variant?: 'primary' | 'secondary'
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'quaternary'
   outlined?: boolean
 }

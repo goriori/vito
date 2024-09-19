@@ -23,7 +23,6 @@ defineProps<CProps>()
   width: 100%;
   cursor: pointer;
   color: #000;
-  max-width: 200px;
   padding: var(--space-sm);
   display: flex;
   flex-direction: column;
@@ -33,7 +32,7 @@ defineProps<CProps>()
   border: 1px solid transparent;
 
   &:hover {
-    transform: scale(1.1);
+    opacity: 0.8;
   }
 
   &.rounded {
@@ -45,13 +44,27 @@ defineProps<CProps>()
   }
 
   &.primary {
+    color: var(--fourth-color);
     border-color: var(--primary-color);
     background-color: var(--primary-color);
   }
 
   &.secondary {
+    color: var(--fourth-color);
     border-color: var(--secondary-color);
     background-color: var(--secondary-color);
+  }
+
+  &.tertiary {
+    color: var(--fourth-color);
+    border-color: var(--thrid-color);
+    background-color: var(--thrid-color);
+  }
+
+  &.quaternary {
+    color: var(--primary-color);
+    border-color: var(--fourth-color);
+    background-color: var(--fourth-color);
   }
 }
 </style>
