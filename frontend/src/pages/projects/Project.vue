@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router'
-import {computed, onMounted, onUpdated, ref, watch} from 'vue'
-import ProjectService from '@/services/projects/index.ts'
-import SliderProject from '@/components/pages/project/slider-project/SliderProject.vue'
-import ProjectInfo from '@/components/pages/project/project-info/ProjectInfo.vue'
-import ProjectDetails from '@/components/pages/project/project-details/ProjectDetails.vue'
+import { onMounted, ref } from 'vue'
 import { useApplicationStore } from '@/stores/app.store.ts'
+import { useSessionStore } from '@/stores/session.store.ts'
+import { Project } from '@/entities/project/index.ts'
+import { ProjectAdapter } from '@/adapter/project/index.ts'
+import { ERROR_MESSAGES } from '@/utils/configs/errors.config.ts'
 import {
   YandexMap,
   YandexMapControls,
@@ -14,10 +14,10 @@ import {
   YandexMapDefaultMarker,
   YandexMapDefaultFeaturesLayer,
 } from 'vue-yandex-maps'
-import { Project } from '@/entities/project/index.ts'
-import { useSessionStore } from '@/stores/session.store.ts'
-import { ProjectAdapter } from '@/adapter/project'
-import { ERROR_MESSAGES } from '@/utils/configs/errors.config.ts'
+import ProjectService from '@/services/projects/index.ts'
+import SliderProject from '@/components/pages/project/slider-project/SliderProject.vue'
+import ProjectInfo from '@/components/pages/project/project-info/ProjectInfo.vue'
+import ProjectDetails from '@/components/pages/project/project-details/ProjectDetails.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -52,7 +52,6 @@ const stopLoadAfterTimeout = () => {
   const TIMEOUT = 2000
   setTimeout(applicationStore.toggleStateLoadingApplication, TIMEOUT)
 }
-
 
 onMounted(async () => {
   Promise.all([validHaveProjectId(), validSession(), loadProjectInfo()])

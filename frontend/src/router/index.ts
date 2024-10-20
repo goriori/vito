@@ -15,6 +15,7 @@ const router = createRouter({
       name: 'auth',
       meta: {
         name: 'Авторизация',
+        layout: 'default',
       },
       component: AuthView,
     },
@@ -23,6 +24,7 @@ const router = createRouter({
       name: 'account',
       meta: {
         name: 'Аккаунт',
+        layout: 'session',
       },
       component: AccountView,
     },
@@ -31,14 +33,16 @@ const router = createRouter({
       name: 'projects',
       meta: {
         name: 'Проекты',
+        layout: 'session',
       },
       component: ProjectsView,
     },
     {
-      path: '/project/:id',
+      path: '/project/:pageId',
       name: 'project',
       meta: {
         name: 'Проект',
+        layout: 'session',
       },
       component: ProjectView,
     },

@@ -32,6 +32,7 @@ const redirectToProjects = () =>
   background-color: var(--secondary-color);
   border-bottom: 1px solid var(--fourth-color);
   box-shadow: 0 0 20px var(--fourth-color);
+  color: var(--fourth-color);
 }
 
 .logo {
