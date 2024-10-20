@@ -98,6 +98,7 @@ const toggleMenu = () => (isActive.value = !isActive.value)
 
   &-menu {
     position: absolute;
+    z-index: 10;
     width: 250px;
     right: 100px;
     display: flex;

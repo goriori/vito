@@ -31,6 +31,7 @@ const openErrorAlert = (error: { message: string }) => {
 
 const loadProjects = async (page: number) => {
   if (!jwtToken.value) return openErrorAlert(ERROR_MESSAGES.JWT_TOKEN_EMPTY)
+  if (listStore.getList('projects').length > 0) return
   const setProjectList = (responseProjectsData: ResponseProjects) => {
     const addProjectToList = (project: Project) => listStore.addItemToList('projects', new ProjectAdapter(project).adapt())
     responseProjectsData.projects.forEach(addProjectToList)
@@ -50,7 +51,7 @@ onMounted(() => {
 <template>
   <div class="flex column">
     <Header />
-    <slot  />
+    <slot />
     <Footer />
   </div>
 </template>
