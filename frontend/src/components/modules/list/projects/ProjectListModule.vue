@@ -5,33 +5,41 @@ import { useRouter } from 'vue-router'
 import { useApplicationStore } from '@/stores/app.store.ts'
 import { useListStore } from '@/stores/list.store.ts'
 import { Project } from '@/entities/project/index.ts'
+import { ERROR_MESSAGES } from '@/utils/configs/errors.config.ts'
 
 const router = useRouter()
 const applicationStore = useApplicationStore()
 const listStore = useListStore()
 const projects = ref<Project[]>([])
 const isLoading = computed(() => applicationStore.getStateLoadingApplication())
-
 const redirectToProject = (project: Project) => {
   router.push(`/project/${project.id}`)
 }
 
-onMounted(async () => {
+const openErrorAlert = (error: { message: string }) => {
+  applicationStore.getAlert('error')?.setSettings(error).onShow()
+}
+
+const checkProjectList = async () => {
+  const TIME_CHECK = 1000
   applicationStore.toggleStateLoadingApplication()
-  const TIMEOUT = 2000
-  projects.value = listStore.getList('projects') as Project[]
-  setTimeout(() => applicationStore.toggleStateLoadingApplication(), TIMEOUT)
+  setTimeout(() => {
+    const list = listStore.getList('projects') as Project[]
+    if (list.length === 0) openErrorAlert(ERROR_MESSAGES.LOAD_PROJECTS)
+    else projects.value = list
+    applicationStore.toggleStateLoadingApplication()
+  }, TIME_CHECK)
+}
+
+onMounted(async () => {
+  await checkProjectList()
 })
 </script>
 
 <template>
   <article class="module">
     <div class="module-list">
-      <ProjectList
-        v-if="!isLoading && projects.length !== 0"
-        :projects="projects"
-        @on-target-card="redirectToProject"
-      />
+      <ProjectList v-if="!isLoading && projects.length !== 0" :projects="projects" @on-target-card="redirectToProject" />
       <p v-else>Список проектов пуст</p>
     </div>
   </article>

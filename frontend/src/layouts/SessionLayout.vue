@@ -50,7 +50,7 @@ onMounted(() => {
 <template>
   <div class="flex column">
     <Header />
-    <slot />
+    <slot  />
     <Footer />
   </div>
 </template>

@@ -82,4 +82,8 @@ export class Session implements SessionAbstracted {
   setTokenPermission(token: TokenPermission) {
     this.tokens.push(token)
   }
+
+  getTokenPermission(type: 'jwt') {
+    return this.tokens.find((token) => token.type === type)
+  }
 }
