@@ -9,13 +9,15 @@ import { useSessionStore } from '@/stores/session.store.ts'
 import { useListStore } from '@/stores/list.store.ts'
 import { TokenPermission } from '@/entities/session/types.ts'
 import { useRoute } from 'vue-router'
+import { useApplicationStore } from '@/stores/app.store.ts'
+import { ERROR_MESSAGES } from '@/utils/configs/errors.config.ts'
 
 const route = useRoute()
 const sessionStore = useSessionStore()
+const applicationStore = useApplicationStore()
 const listStore = useListStore()
 
 const pageId = ref(route.query.page)
-
 const jwtToken = computed(() => {
   const findJwtToken = (token: TokenPermission) => token.type === 'jwt'
   const token = sessionStore.getSession()?.tokens.find(findJwtToken)
@@ -23,13 +25,19 @@ const jwtToken = computed(() => {
   return token.value
 })
 
+const openErrorAlert = (error: { message: string }) => {
+  applicationStore.getAlert('error')?.setSettings(error).onShow()
+}
+
 const loadProjects = async (page: number) => {
-  if (!jwtToken.value) return
+  if (!jwtToken.value) return openErrorAlert(ERROR_MESSAGES.JWT_TOKEN_EMPTY)
   const setProjectList = (responseProjectsData: ResponseProjects) => {
     const addProjectToList = (project: Project) => listStore.addItemToList('projects', new ProjectAdapter(project).adapt())
     responseProjectsData.projects.forEach(addProjectToList)
   }
-  ProjectService.getProjects(jwtToken.value, page).then(setProjectList)
+  ProjectService.getProjects(jwtToken.value, page)
+    .then(setProjectList)
+    .catch(() => openErrorAlert(ERROR_MESSAGES.LOAD_PROJECTS))
 }
 
 onMounted(() => {

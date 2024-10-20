@@ -11,4 +11,7 @@ export const ERROR_MESSAGES = {
   ERROR_SERVER: {
     message: 'Ошибка сервера, попробуйте позже',
   },
+  JWT_TOKEN_EMPTY: {
+    message: 'Отсутствует токен доступа',
+  },
 }
