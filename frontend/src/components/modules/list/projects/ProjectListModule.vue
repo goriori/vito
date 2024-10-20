@@ -1,34 +1,38 @@
 <script setup lang="ts">
 import ProjectList from '@/components/ui/list/project-list/ProjectList.vue'
-import { onMounted, ref } from 'vue'
-import CircleSpinner from '@/components/ui/spiners/CircleSpinner.vue'
+import { computed, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { useApplicationStore } from '@/stores/app.store.ts'
+import { useListStore } from '@/stores/list.store.ts'
+import { Project } from '@/entities/project/index.ts'
 
 const router = useRouter()
-const projects = ref(null)
-const isLoading = ref(true)
+const applicationStore = useApplicationStore()
+const listStore = useListStore()
+const projects = ref<Project[]>([])
+const isLoading = computed(() => applicationStore.getStateLoadingApplication())
 
-const redirectToProject = (project: object) => {
+const redirectToProject = (project: Project) => {
   router.push(`/project/${project.id}`)
 }
+
 onMounted(async () => {
+  applicationStore.toggleStateLoadingApplication()
   const TIMEOUT = 2000
-  const projectsData = await fetch('/projects.json')
-  projects.value = await projectsData.json()
-  setTimeout(() => (isLoading.value = false), TIMEOUT)
+  projects.value = listStore.getList('projects') as Project[]
+  setTimeout(() => applicationStore.toggleStateLoadingApplication(), TIMEOUT)
 })
 </script>
 
 <template>
   <article class="module">
-    <p v-if="!isLoading" class="module-title">Проекты</p>
     <div class="module-list">
-      <CircleSpinner v-if="isLoading" />
       <ProjectList
-        v-else
+        v-if="!isLoading && projects.length !== 0"
         :projects="projects"
         @on-target-card="redirectToProject"
       />
+      <p v-else>Список проектов пуст</p>
     </div>
   </article>
 </template>
@@ -43,15 +47,6 @@ onMounted(async () => {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
-
-  &-title {
-    font-weight: bold;
-    font-size: 40px;
-    color: #fff;
-    @media (max-width: $md4 + px) {
-      font-size: var(--primary-font-size);
-    }
-  }
 
   &-list {
     display: flex;

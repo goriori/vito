@@ -5,7 +5,7 @@ defineProps<CProps>()
 </script>
 
 <template>
-  <article :class="['card', variant, { rounded, outlined }]">
+  <article v-ripple :class="['card', variant, { rounded, outlined }]">
     <section class="card-top">
       <slot name="card-top" />
     </section>
@@ -20,6 +20,8 @@ defineProps<CProps>()
 
 <style scoped>
 .card {
+  position: relative;
+  overflow: hidden;
   width: 100%;
   cursor: pointer;
   color: #000;

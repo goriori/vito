@@ -1,29 +1,34 @@
 <script setup lang="ts">
+import { useSessionStore } from '@/stores/session.store.ts'
+import { Member } from '@/entities/member/index.ts'
 import Chip from '@/components/ui/chip/Chip.vue'
 import PersonList from '@/components/ui/list/person-list/PersonList.vue'
+import AddProjectMemberFeature from '@/features/add-project-member/AddProjectMemberFeature.vue'
+import { ref } from 'vue'
 
 type PProps = {
-  projectName: string
-  projectType: string
+  name: string
+  type: string
   address: string
   status: string
   description: string
-  members: string[]
+  members: Member[]
+  expenses: number
 }
 defineProps<PProps>()
+const sessionStore = useSessionStore()
+const role = ref(sessionStore.getSession()?.role.name)
 </script>
 
 <template>
-  <div>
+  <div class="info">
     <div class="info-top">
       <div class="info-title">
-        <h1 class="title">{{ projectName }}</h1>
+        <h1 class="title">{{ name }}</h1>
         <p class="address">{{ address }}</p>
       </div>
       <div class="info-statuses">
-        <Chip rounded variant="secondary" class="status"
-          >{{ projectType }}
-        </Chip>
+        <Chip rounded variant="secondary" class="status">{{ type }}</Chip>
         <Chip rounded variant="secondary" class="status">{{ status }}</Chip>
       </div>
     </div>
@@ -31,22 +36,33 @@ defineProps<PProps>()
       <div class="members">
         <h2>Состав</h2>
         <div class="members-list">
-          <PersonList :persons="members" />
-          <p v-if="members.length === 0">Состав не сформирован</p>
+          <PersonList :members="members" />
+          <AddProjectMemberFeature v-if="role === 'director'" />
+          <p v-if="members && members.length === 0">Состав не сформирован</p>
         </div>
       </div>
       <p class="description">{{ description }}</p>
     </div>
     <div class="info-bottom">
-      <h2>Затрачено: 3 360 Р</h2>
-      <h2>Остаток: 96 640 Р</h2>
-      <h2>Бюджет: 100 000 Р</h2>
+      <h2>Затрачено: {{ expenses }} Р</h2>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
+@import '@/assets/scss/variables';
+
 .info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  background-color: var(--fourth-color);
+  gap: var(--space-xs);
+
   &-top {
     display: flex;
     align-items: flex-start;

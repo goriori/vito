@@ -6,7 +6,7 @@ const applicationStore = useApplicationStore()
 
 <template>
   <Teleport to="body">
-    <section class="modals">
+    <section class="alerts">
       <template v-for="alert in applicationStore.getAlerts()" :key="alert.id">
         <component
           :is="alert.getComponent()"
@@ -19,4 +19,12 @@ const applicationStore = useApplicationStore()
   </Teleport>
 </template>
 
-<style scoped></style>
+<style scoped>
+.alerts {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, 0);
+}
+</style>

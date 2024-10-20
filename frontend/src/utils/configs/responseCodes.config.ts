@@ -1,0 +1,4 @@
+export const RESPONSE_CODES = {
+  BAD_REQUEST: 400,
+  ERROR_SERVER: 500,
+}

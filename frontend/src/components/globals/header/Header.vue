@@ -3,7 +3,8 @@ import AccountModule from '@/components/modules/account/AccountModule.vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
-const redirectToProjects = () => router.push({ name: 'projects' })
+const redirectToProjects = () =>
+  router.push({ name: 'projects', query: { page: 1 } })
 </script>
 
 <template>

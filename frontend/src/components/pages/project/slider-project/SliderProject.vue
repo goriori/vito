@@ -1,21 +1,20 @@
 <script setup lang="ts">
 import Slider from '@/components/ui/slider/Slider.vue'
 import Image from '@/components/ui/image/Image.vue'
+import { ref } from 'vue'
 
-const images = [
-  {
-    href: '/images/projects/project-1.jpg',
+type SProps = {
+  imageUrls: string[]
+}
+const props = defineProps<SProps>()
+
+const buildDataImage = () =>
+  props.imageUrls.map((image) => ({
+    href: window.API + image,
     rounded: true,
-  },
-  {
-    href: '/images/projects/project-2.jpg',
-    rounded: true,
-  },
-  {
-    href: '/images/projects/project-3.jpg',
-    rounded: true,
-  },
-]
+  }))
+
+const images = ref(buildDataImage())
 </script>
 
 <template>

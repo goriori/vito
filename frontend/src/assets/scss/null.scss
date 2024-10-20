@@ -44,6 +44,7 @@ html,
 body {
   height: 100%;
   color: $black;
+  overflow-x: hidden;
   @include scrollbar();
 }
 

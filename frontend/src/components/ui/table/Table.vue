@@ -24,6 +24,7 @@ const countColumns = computed(() => props.columns.length)
 
 <style scoped lang="scss">
 @import '@/assets/scss/mixins';
+@import '@/assets/scss/variables';
 
 .table {
   border-radius: var(--radius-sm);
@@ -41,7 +42,7 @@ const countColumns = computed(() => props.columns.length)
     display: flex;
     flex-direction: column;
     gap: 1px;
-    max-height: 300px;
+    max-height: 295px;
     overflow-y: auto;
     @include no-scroll();
   }
@@ -55,9 +56,18 @@ const countColumns = computed(() => props.columns.length)
     border-radius: var(--radius-sm);
   }
 
+  &-columns {
+    @media (max-width: $md4 + px) {
+      font-size: 8px;
+    }
+  }
+
   &-row {
     color: var(--fourth-color);
     background-color: var(--secondary-color);
+    @media (max-width: $md4 + px) {
+      font-size: 10px;
+    }
   }
 }
 </style>

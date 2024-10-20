@@ -5,7 +5,7 @@ type AProps = {
   message: string
 }
 type AEmits = {
-  (eventName: 'onClose'): void
+  (_eventName: 'onClose'): void
 }
 defineProps<AProps>()
 const emits = defineEmits<AEmits>()

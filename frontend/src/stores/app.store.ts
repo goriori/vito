@@ -1,12 +1,14 @@
 import { defineStore } from 'pinia'
 import { ref, shallowRef } from 'vue'
 import { Modal } from '@/entities/modal/index.ts'
-import { Alert } from '@/entities/modal/alert'
+import { Alert } from '@/entities/modal/alert/index.ts'
 import TestModal from '@/components/globals/modals/test-modal/TestModal.vue'
 import ErrorAlert from '@/components/globals/alerts/error-alert/ErrorAlert.vue'
 import SuccessAlert from '@/components/globals/alerts/success-alert/SuccessAlert.vue'
 
 export const useApplicationStore = defineStore('application', () => {
+  const isLoading = ref(false)
+
   const modals = ref<Modal[]>([
     new Modal('get-data-modal', shallowRef(TestModal)),
   ])
@@ -25,10 +27,17 @@ export const useApplicationStore = defineStore('application', () => {
     if (modal) return modal
   }
 
+  const getStateLoadingApplication = () => isLoading.value
+
+  const toggleStateLoadingApplication = () =>
+    (isLoading.value = !isLoading.value)
+
   return {
     getModals,
     getModal,
     getAlerts,
     getAlert,
+    getStateLoadingApplication,
+    toggleStateLoadingApplication,
   }
 })

@@ -4,13 +4,13 @@
 @import 'null';
 @import 'animation';
 @import "mixins";
+@import 'bootstrap';
 
 #app {
   display: flex;
   flex-direction: column;
   height: 100%;
   background-color: var(--secondary-color);
-
 }
 
 .page {

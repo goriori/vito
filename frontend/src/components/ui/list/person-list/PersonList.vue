@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import PersonChip from '@/components/ui/chip/person/PersonChip.vue'
+import PersonChip from '@/components/ui/chip/member/MemberChip.vue'
+import { Member } from '@/entities/member/index.ts'
 
 type LProps = {
-  persons: string[]
+  members: Member[]
 }
 defineProps<LProps>()
 </script>
 
 <template>
-  <PersonChip v-for="person in persons" :key="person" :person="person" />
+  <PersonChip v-for="member in members" :key="member" :member="member" />
 </template>
 
 <style scoped lang="scss"></style>

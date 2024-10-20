@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useSessionStore } from '@/stores/session.store.ts'
 
 const AuthView = () => import('@/pages/auth/Authorization.vue')
+const AccountView = () => import('@/pages/account/Account.vue')
 const ProjectsView = () => import('@/pages/projects/Projects.vue')
 const ProjectView = () => import('@/pages/projects/Project.vue')
 const UiView = () => import('@/pages/ui/Ui.vue')
@@ -15,6 +17,14 @@ const router = createRouter({
         name: 'Авторизация',
       },
       component: AuthView,
+    },
+    {
+      path: '/account',
+      name: 'account',
+      meta: {
+        name: 'Аккаунт',
+      },
+      component: AccountView,
     },
     {
       path: '/projects',
@@ -49,8 +59,14 @@ const router = createRouter({
       component: ProjectInfoView,
     },
   ],
+  scrollBehavior(_to, _from, _savedPosition) {
+    return { top: 0 }
+  },
 })
-router.beforeEach((_to, _from, next) => {
-  next()
+router.beforeEach((to, _from, next) => {
+  const sessionStore = useSessionStore()
+
+  if (to.name !== 'auth' && !sessionStore.getSession()) next({ name: 'auth' })
+  else next()
 })
 export default router

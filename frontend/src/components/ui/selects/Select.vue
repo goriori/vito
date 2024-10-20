@@ -49,8 +49,8 @@ onMounted(() => {
   align-items: center;
   cursor: pointer;
   border-radius: 5px;
-  border: 2px solid transparent;
-  padding: 10px;
+  border: 1px solid transparent;
+  padding: var(--space-sm);
 
   &:focus {
     transition: var(--animation-time) all ease-in-out;
