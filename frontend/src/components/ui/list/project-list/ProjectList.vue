@@ -43,6 +43,7 @@ onMounted(() => console.log(deviceSize.value))
         :status="project.status"
         :type="project?.type"
         class="item"
+        @click="project.toggleTarget()"
       />
     </List>
   </template>
@@ -58,6 +59,7 @@ onMounted(() => console.log(deviceSize.value))
         :status="project.status"
         :type="project?.type"
         class="item"
+        @click="project.toggleTarget()"
       />
     </List>
   </template>
@@ -74,6 +76,7 @@ onMounted(() => console.log(deviceSize.value))
         :status="project.status"
         :type="project?.type"
         class="item"
+        @click="project.toggleTarget()"
       />
     </List>
   </template>
@@ -89,6 +92,7 @@ onMounted(() => console.log(deviceSize.value))
         :status="project.status"
         :type="project?.type"
         class="item"
+        @click="project.toggleTarget()"
       />
     </List>
   </template>

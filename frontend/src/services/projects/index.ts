@@ -7,15 +7,12 @@ class ProjectService extends Service {
     super.setBaseUrl(window.API)
   }
 
-  async getProjects(
-    token: string,
-    page: number = 1
-  ): Promise<ResponseProjects> {
+  async getProjects(token: string, page: number = 1): Promise<ResponseProjects> {
     try {
       const { data, meta } = await this.request({
         url: '/api/projects',
         params: {
-          populate: 'preview,type,status',
+          populate: 'preview,type,status,members,tables,images',
           'pagination[page]': page,
         },
         headers: {
@@ -44,6 +41,22 @@ class ProjectService extends Service {
         },
       })
       return data
+    } catch (e) {
+      console.log(e)
+      throw e
+    }
+  }
+
+  async updateProject(projectId: number, payloadData: { data: object }, token: string) {
+    try {
+      await this.request({
+        url: `/api/projects/${projectId}`,
+        method: 'put',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        data: payloadData,
+      })
     } catch (e) {
       console.log(e)
       throw e

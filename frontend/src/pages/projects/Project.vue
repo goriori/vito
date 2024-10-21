@@ -18,33 +18,31 @@ import ProjectService from '@/services/projects/index.ts'
 import SliderProject from '@/components/pages/project/slider-project/SliderProject.vue'
 import ProjectInfo from '@/components/pages/project/project-info/ProjectInfo.vue'
 import ProjectDetails from '@/components/pages/project/project-details/ProjectDetails.vue'
+import { useListStore } from '@/stores/list.store.ts'
 
 const router = useRouter()
 const route = useRoute()
 const applicationStore = useApplicationStore()
 const sessionStore = useSessionStore()
+const listStore = useListStore()
 const projectId = +route.params.id
 const project = ref<Project | null>(null)
 
 const loadProjectInfo = async () => {
   applicationStore.toggleStateLoadingApplication()
-  const jwtToken = sessionStore
-    .getSession()
-    ?.tokens.find((token) => token.type === 'jwt')
-  if (!jwtToken) return await router.push({ name: 'auth' })
-  project.value = new ProjectAdapter(
-    await ProjectService.getProject(projectId, jwtToken.value)
-  ).adapt()
+  const currentProject = listStore.getList('projects').find((project) => project)
+  console.log(currentProject)
+  if (!currentProject) {
+    const jwtToken = sessionStore.getSession()?.tokens.find((token) => token.type === 'jwt')
+    if (!jwtToken) return await router.push({ name: 'auth' })
+    project.value = new ProjectAdapter(await ProjectService.getProject(projectId, jwtToken.value)).adapt()
+  } else {
+    project.value = currentProject
+  }
 }
 
 const validHaveProjectId = async () => {
   if (!projectId) return await router.push({ name: 'projects' })
-  return
-}
-
-const validSession = async () => {
-  const session = sessionStore.getSession()
-  if (!session) return await router.push({ name: 'auth' })
   return
 }
 
@@ -54,15 +52,12 @@ const stopLoadAfterTimeout = () => {
 }
 
 onMounted(async () => {
-  Promise.all([validHaveProjectId(), validSession(), loadProjectInfo()])
+  Promise.all([validHaveProjectId(), loadProjectInfo()])
     .then(stopLoadAfterTimeout)
     .then(() => console.log(project.value))
     .catch(() => {
       applicationStore.toggleStateLoadingApplication()
-      applicationStore
-        .getAlert('error')
-        ?.setSettings(ERROR_MESSAGES.LOAD_DATA)
-        .onShow()
+      applicationStore.getAlert('error')?.setSettings(ERROR_MESSAGES.LOAD_DATA).onShow()
       router.push({ name: 'projects', query: { page: 1 } })
     })
 })
@@ -71,11 +66,7 @@ onMounted(async () => {
 <template>
   <div class="content">
     <div v-if="project" class="project-top">
-      <SliderProject
-        v-if="project?.images"
-        :image-urls="project?.images"
-        class="project-slider"
-      />
+      <SliderProject v-if="project?.images" :image-urls="project?.images" class="project-slider" />
       <ProjectInfo
         :name="project?.name"
         :description="project?.description"

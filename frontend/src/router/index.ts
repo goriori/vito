@@ -69,8 +69,8 @@ const router = createRouter({
 })
 router.beforeEach((to, _from, next) => {
   const sessionStore = useSessionStore()
-
-  if (to.name !== 'auth' && !sessionStore.getSession()) next({ name: 'auth' })
+  const haveSession = sessionStore.getSession()
+  if (to.name !== 'auth' && !haveSession) next({ name: 'auth' })
   else next()
 })
 export default router

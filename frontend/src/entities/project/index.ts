@@ -1,7 +1,6 @@
 import { ProjectOption } from '@/entities/project/types.ts'
 import { ProjectTable } from '@/services/projects/types.ts'
-import { Member, MemberOption } from '@/entities/member/index.ts'
-import { UserServer } from '@/services/users/types.ts'
+import { Member } from '@/entities/member/index.ts'
 
 export class Project {
   id: number
@@ -18,6 +17,7 @@ export class Project {
     tables: ProjectTable[]
   }
   expenses: string
+  isTarget: boolean
 
   constructor(option: ProjectOption) {
     this.id = option.id
@@ -32,9 +32,18 @@ export class Project {
     this.description = option.description
     this.details = option.details || {}
     this.expenses = option.expenses
+    this.isTarget = false
   }
 
-  addMember(user: MemberOption) {
-    this.members.push(new Member(user))
+  addMember(member: Member) {
+    this.members.push(member)
+  }
+
+  getMembers() {
+    return this.members
+  }
+
+  toggleTarget() {
+    this.isTarget = !this.isTarget
   }
 }
