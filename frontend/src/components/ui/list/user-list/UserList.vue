@@ -17,17 +17,24 @@ const onTarget = (user: UserServer) => {
 </script>
 
 <template>
-  <List :column-space="10">
-    <UserCard
-      v-for="user in users"
-      :key="user.id"
-      :name="user.name"
-      :username="user.username"
-      :avatar="user.avatar?.url"
-      :skills="user.skills"
-      @click="onTarget(user)"
-    />
+  <List :column-space="10" class="list">
+    <template v-if="users.length > 0">
+      <UserCard
+        v-for="user in users"
+        :key="user.id"
+        :name="user.name"
+        :username="user.username"
+        :avatar="user.avatar?.url"
+        :skills="user.skills"
+        @click="onTarget(user)"
+      />
+    </template>
+    <template v-else>Список пуст</template>
   </List>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.list {
+  color:var(--fourth-color)
+}
+</style>

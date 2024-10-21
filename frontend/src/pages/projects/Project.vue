@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router'
-import { onMounted, ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { useApplicationStore } from '@/stores/app.store.ts'
 import { useSessionStore } from '@/stores/session.store.ts'
 import { Project } from '@/entities/project/index.ts'
@@ -19,6 +19,7 @@ import SliderProject from '@/components/pages/project/slider-project/SliderProje
 import ProjectInfo from '@/components/pages/project/project-info/ProjectInfo.vue'
 import ProjectDetails from '@/components/pages/project/project-details/ProjectDetails.vue'
 import { useListStore } from '@/stores/list.store.ts'
+import { TokenPermission } from '@/entities/session/types.ts'
 
 const router = useRouter()
 const route = useRoute()
@@ -30,12 +31,14 @@ const project = ref<Project | null>(null)
 
 const loadProjectInfo = async () => {
   applicationStore.toggleStateLoadingApplication()
-  const currentProject = listStore.getList('projects').find((project) => project)
-  console.log(currentProject)
+  const findCurrentProject = (project: Project) => project.isTarget
+  const findJwtToken = (token: TokenPermission) => token.type === 'jwt'
+  const currentProject = listStore.getList('projects').find(findCurrentProject)
   if (!currentProject) {
-    const jwtToken = sessionStore.getSession()?.tokens.find((token) => token.type === 'jwt')
-    if (!jwtToken) return await router.push({ name: 'auth' })
-    project.value = new ProjectAdapter(await ProjectService.getProject(projectId, jwtToken.value)).adapt()
+    const jwtToken = sessionStore.getSession()?.tokens.find(findJwtToken)
+    if (!jwtToken) return false
+    const projectData = await ProjectService.getProject(projectId, jwtToken.value)
+    project.value = new ProjectAdapter(projectData).adapt()
   } else {
     project.value = currentProject
   }
@@ -60,6 +63,9 @@ onMounted(async () => {
       applicationStore.getAlert('error')?.setSettings(ERROR_MESSAGES.LOAD_DATA).onShow()
       router.push({ name: 'projects', query: { page: 1 } })
     })
+})
+onBeforeUnmount(() => {
+  project.value?.toggleTarget()
 })
 </script>
 

@@ -40,4 +40,7 @@ const onTarget = (user: UserServer) => {
 .action {
   max-width: 50px;
 }
+::v-deep(.popup) {
+  width: 400px;
+}
 </style>

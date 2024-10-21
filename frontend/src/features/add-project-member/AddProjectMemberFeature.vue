@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import UsersButtonPopup from '@/components/ui/button-popup/users/UsersButtonPopup.vue'
+import { useRoute } from 'vue-router'
 import { computed, onMounted, ref } from 'vue'
 import { useListStore } from '@/stores/list.store.ts'
-import { UserServer } from '@/services/users/types.ts'
-import UserService from '@/services/users/index.ts'
-import ProjectService from '@/services/projects/index.ts'
 import { useSessionStore } from '@/stores/session.store.ts'
-import { useRoute } from 'vue-router'
+import { UserServer } from '@/services/users/types.ts'
 import { Project } from '@/entities/project/index.ts'
 import { TokenPermission } from '@/entities/session/types.ts'
-import { MemberAdapter, MemberUserAdapter } from '@/adapter/member'
-import { ProjectMember } from '@/services/projects/types.ts'
+import { MemberUserAdapter } from '@/adapter/member'
+import UserService from '@/services/users/index.ts'
+import ProjectService from '@/services/projects/index.ts'
+import UsersButtonPopup from '@/components/ui/button-popup/users/UsersButtonPopup.vue'
+import { Member } from '@/entities/member'
 
 const listStore = useListStore()
 const sessionStore = useSessionStore()
@@ -29,33 +29,58 @@ const jwtToken = computed(() => {
 const loadUsers = async () => {
   if (jwtToken.value) {
     const userData = await UserService.getUsers(jwtToken.value)
-    userData.forEach((user) => listStore.addItemToList('users', user))
-    users.value = listStore.getList('users') as UserServer[]
+    const findCurrentProject = (project: Project) => project.id === projectId.value
+    const addUserToList = (user: UserServer) => listStore.addItemToList('users', user)
+    const getMemberUsernames = (member: Member) => member.username
+    const project = listStore.getList('projects').find(findCurrentProject) as Project
+    const projectMemberUsernames = project.getMembers().map(getMemberUsernames)
+    userData.forEach(addUserToList)
+    userData.forEach((user) => {
+      const haveUserInProject = projectMemberUsernames.find((memberUsername) => memberUsername === user.username)
+      if (!haveUserInProject) users.value.push(user)
+    })
   }
+}
+const getUsersNotInProjects = () => {
+  const userList = listStore.getList('users') as UserServer[]
+  const findCurrentProject = (project: Project) => project.id === projectId.value
+  const getMemberUsernames = (member: Member) => member.username
+  const project = listStore.getList('projects').find(findCurrentProject) as Project
+  const projectMemberUsernames = project.getMembers().map(getMemberUsernames)
+  userList.forEach((user) => {
+    const haveUserInProject = projectMemberUsernames.find((memberUsername) => memberUsername === user.username)
+    if (!haveUserInProject) users.value.push(user)
+  })
 }
 
 const toggleLoadState = () => (isLoading.value = !isLoading.value)
 
-const addUserToProject = (user: UserServer) => {
+const addUserToProject = async (user: UserServer) => {
   const TIME_LOAD = 4000
   toggleLoadState()
   const findProject = (project: Project) => project.id == projectId.value
   const project = listStore.getList('projects').find(findProject) as Project
-  project.addMember(new MemberUserAdapter(user).adapt())
+  const newMember = new MemberUserAdapter(user).adapt()
   const members = project.getMembers().map((member) => member.id)
   const payloadUpdate = {
     data: {
-      members,
+      members: [...members, newMember],
     },
   }
-  ProjectService.updateProject(projectId.value, payloadUpdate, jwtToken.value)
-  setTimeout(toggleLoadState, TIME_LOAD)
+  ProjectService.updateProject(projectId.value, payloadUpdate, jwtToken.value).then(() => {
+    setTimeout(() => {
+      toggleLoadState()
+      project.addMember(newMember)
+      getUsersNotInProjects()
+    }, TIME_LOAD)
+  })
 }
 
 onMounted(async () => {
+  console.log('mount')
   const userList = listStore.getList('users')
   if (userList.length === 0) await loadUsers()
-  else users.value = listStore.getList('users') as UserServer[]
+  else getUsersNotInProjects()
 })
 </script>
 
@@ -63,4 +88,8 @@ onMounted(async () => {
   <UsersButtonPopup :users="users" :is-loading="isLoading" class="feature" @on-target="addUserToProject" />
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.feature {
+  max-width: 50px;
+}
+</style>
