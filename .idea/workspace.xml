@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="15edbcc2-9711-43ce-8a87-7c437546bb6c" name="Changes" comment="feature:&#10;- create member user adapter&#10;- add methods for get members and toggle target state project&#10;- add service project method update data&#10;&#10;change:&#10;- lint and prettier code.&#10;- decomposition function for imperial function">
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/button-popup/users/UsersButtonPopup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/button-popup/users/UsersButtonPopup.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/list/user-list/UserList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/list/user-list/UserList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/add-project-member/AddProjectMemberFeature.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/add-project-member/AddProjectMemberFeature.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/projects/Project.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/projects/Project.vue" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+        <option value="Vue Options API Component" />
+        <option value="TypeScript File" />
+        <option value="Vue Composition API Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2lyULwM9SKV7KN6xwadzixJz0Bn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/goriori/github/my_projects/vito/frontend/src/factories/projects/status&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\goriori\\github\\my_projects\\vito\\frontend\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\goriori\\github\\my_projects\\vito\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;vue.recent.templates&quot;: [
+      &quot;Vue Options API Component&quot;,
+      &quot;Vue Composition API Component&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\goriori\github\my_projects\vito\frontend\src\factories\projects\status" />
+      <recent name="C:\goriori\github\my_projects\vito\frontend\src\pages" />
+      <recent name="C:\goriori\github\my_projects\vito\frontend" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\goriori\github\my_projects\vito\frontend\public\images\account" />
+      <recent name="C:\goriori\github\my_projects\vito\frontend\public\images\projects" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="15edbcc2-9711-43ce-8a87-7c437546bb6c" name="Changes" comment="" />
+      <created>1726151757649</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726151757649</updated>
+      <workItem from="1726151758716" duration="2312000" />
+      <workItem from="1726154155425" duration="19000" />
+      <workItem from="1726207322179" duration="27000" />
+      <workItem from="1726230302912" duration="2382000" />
+      <workItem from="1726233547847" duration="28000" />
+      <workItem from="1726288884575" duration="5375000" />
+      <workItem from="1726377547847" duration="7534000" />
+      <workItem from="1726390359436" duration="1538000" />
+      <workItem from="1726413491871" duration="124000" />
+      <workItem from="1726466002858" duration="3460000" />
+      <workItem from="1726471571687" duration="2228000" />
+      <workItem from="1726479485309" duration="4000" />
+      <workItem from="1726486995445" duration="5875000" />
+      <workItem from="1726493034421" duration="804000" />
+      <workItem from="1726503328825" duration="2267000" />
+      <workItem from="1726552888806" duration="443000" />
+      <workItem from="1726565740682" duration="752000" />
+      <workItem from="1726567690572" duration="239000" />
+      <workItem from="1726744150310" duration="210000" />
+      <workItem from="1726744416702" duration="8376000" />
+      <workItem from="1726802327892" duration="6482000" />
+      <workItem from="1726834861866" duration="8804000" />
+      <workItem from="1726845758472" duration="1222000" />
+      <workItem from="1726895218853" duration="3170000" />
+      <workItem from="1726919454498" duration="9332000" />
+      <workItem from="1727069388672" duration="58000" />
+      <workItem from="1727095239621" duration="3829000" />
+      <workItem from="1727157149787" duration="3500000" />
+      <workItem from="1727263635060" duration="3106000" />
+      <workItem from="1727273635480" duration="51000" />
+      <workItem from="1727341588358" duration="5000" />
+      <workItem from="1728469974378" duration="86000" />
+      <workItem from="1728488727432" duration="6706000" />
+      <workItem from="1728540119597" duration="7000" />
+      <workItem from="1728548335473" duration="3988000" />
+      <workItem from="1728558151799" duration="100000" />
+      <workItem from="1728576785692" duration="4311000" />
+      <workItem from="1728616634078" duration="2308000" />
+      <workItem from="1728618994822" duration="113000" />
+      <workItem from="1728627149493" duration="9000" />
+      <workItem from="1728663293973" duration="4455000" />
+      <workItem from="1728728343726" duration="5759000" />
+      <workItem from="1728747741249" duration="3084000" />
+      <workItem from="1728802471885" duration="2857000" />
+      <workItem from="1728834080882" duration="2924000" />
+      <workItem from="1728886991277" duration="7000" />
+      <workItem from="1728911122389" duration="2127000" />
+      <workItem from="1728920788060" duration="4357000" />
+      <workItem from="1728972698475" duration="15000" />
+      <workItem from="1728990371760" duration="4543000" />
+      <workItem from="1729006059601" duration="1889000" />
+      <workItem from="1729010842098" duration="2159000" />
+      <workItem from="1729058412324" duration="6000" />
+      <workItem from="1729092007920" duration="7195000" />
+      <workItem from="1729144461091" duration="262000" />
+      <workItem from="1729154333037" duration="2216000" />
+      <workItem from="1729230307840" duration="4938000" />
+      <workItem from="1729316178953" duration="472000" />
+      <workItem from="1729316908588" duration="1799000" />
+      <workItem from="1729345496749" duration="6615000" />
+      <workItem from="1729438644023" duration="9100000" />
+      <workItem from="1729492380794" duration="4761000" />
+    </task>
+    <task id="LOCAL-00001" summary="init project">
+      <option name="closed" value="true" />
+      <created>1726153103666</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1726153103666</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feature:&#10;- create optimization auto run projects">
+      <option name="closed" value="true" />
+      <created>1726154022877</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1726154022877</updated>
+    </task>
+    <task id="LOCAL-00003" summary="change:&#10;- update files frontend application template">
+      <option name="closed" value="true" />
+      <created>1726230384586</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1726230384586</updated>
+    </task>
+    <task id="LOCAL-00004" summary="refactoring:&#10;- decomposition types on new file type.ts ui components">
+      <option name="closed" value="true" />
+      <created>1726291534990</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1726291534990</updated>
+    </task>
+    <task id="LOCAL-00005" summary="force update">
+      <option name="closed" value="true" />
+      <created>1726744515572</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1726744515572</updated>
+    </task>
+    <task id="LOCAL-00006" summary="force update">
+      <option name="closed" value="true" />
+      <created>1729438674893</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1729438674893</updated>
+    </task>
+    <task id="LOCAL-00007" summary="build:&#10;- create layouts: default, session.&#10;&#10;feature:&#10;- create loadProjects&#10;&#10;change:&#10;- change import logistics in components.&#10;&#10;style:&#10;- change color in header component.">
+      <option name="closed" value="true" />
+      <created>1729441764723</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1729441764723</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feature:&#10;- create check session for default layout&#10;- create redirect to projects page if have session.&#10;- add open error if call catch block request project or jwtToken undefined">
+      <option name="closed" value="true" />
+      <created>1729443362282</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1729443362282</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feature:&#10;- create check projects in projects module&#10;- create method for get token permission">
+      <option name="closed" value="true" />
+      <created>1729444251421</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1729444251421</updated>
+    </task>
+    <task id="LOCAL-00010" summary="change:&#10;- change function load projects (add valid length list project)">
+      <option name="closed" value="true" />
+      <created>1729444625833</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1729444625833</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feature:&#10;- create member user adapter&#10;- add methods for get members and toggle target state project&#10;- add service project method update data&#10;&#10;change:&#10;- lint and prettier code.&#10;- decomposition function for imperial function">
+      <option name="closed" value="true" />
+      <created>1729492851494</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1729492851494</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/frontend/src/directives/vRipple.js" />
+        <option value="$PROJECT_DIR$/frontend/src/directives/vClickOutside.js" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init project" />
+    <MESSAGE value="feature:&#10;- create optimization auto run projects" />
+    <MESSAGE value="change:&#10;- update files frontend application template" />
+    <MESSAGE value="refactoring:&#10;- decomposition types on new file type.ts ui components" />
+    <MESSAGE value="update" />
+    <MESSAGE value="force update" />
+    <MESSAGE value="build:&#10;- create layouts: default, session.&#10;&#10;feature:&#10;- create loadProjects&#10;&#10;change:&#10;- change import logistics in components.&#10;&#10;style:&#10;- change color in header component." />
+    <MESSAGE value="feature:&#10;- create check session for default layout&#10;- create redirect to projects page if have session.&#10;- add open error if call catch block request project or jwtToken undefined" />
+    <MESSAGE value="feature:&#10;- create check projects in projects module&#10;- create method for get token permission" />
+    <MESSAGE value="change:&#10;- change function load projects (add valid length list project)" />
+    <MESSAGE value="feature:&#10;- create member user adapter&#10;- add methods for get members and toggle target state project&#10;- add service project method update data&#10;&#10;change:&#10;- lint and prettier code.&#10;- decomposition function for imperial function" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature:&#10;- create member user adapter&#10;- add methods for get members and toggle target state project&#10;- add service project method update data&#10;&#10;change:&#10;- lint and prettier code.&#10;- decomposition function for imperial function" />
+  </component>
+</project>
