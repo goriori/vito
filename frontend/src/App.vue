@@ -35,7 +35,7 @@ onMounted(() => {
     <Modals />
     <LoaderModule v-if="applicationStore.getStateLoadingApplication()" />
     <template v-if="Component">
-      <transition name="fade-page" mode="out-in">
+      <transition name="fade" mode="out-in">
         <suspense>
           <component :is="layout">
             <component :is="Component" :key="route.fullPath"></component>

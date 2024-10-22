@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15edbcc2-9711-43ce-8a87-7c437546bb6c" name="Changes" comment="feature:&#10;- create member user adapter&#10;- add methods for get members and toggle target state project&#10;- add service project method update data&#10;&#10;change:&#10;- lint and prettier code.&#10;- decomposition function for imperial function">
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/button-popup/users/UsersButtonPopup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/button-popup/users/UsersButtonPopup.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/list/user-list/UserList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/list/user-list/UserList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/add-project-member/AddProjectMemberFeature.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/add-project-member/AddProjectMemberFeature.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/projects/Project.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/projects/Project.vue" afterDir="false" />
+    <list default="true" id="15edbcc2-9711-43ce-8a87-7c437546bb6c" name="Changes" comment="build:&#10;- create entities server">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/scss/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/layouts/SessionLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/layouts/SessionLayout.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +154,7 @@
       <workItem from="1729316908588" duration="1799000" />
       <workItem from="1729345496749" duration="6615000" />
       <workItem from="1729438644023" duration="9100000" />
-      <workItem from="1729492380794" duration="4761000" />
+      <workItem from="1729492380794" duration="5777000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -244,7 +244,23 @@
       <option name="project" value="LOCAL" />
       <updated>1729492851494</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feature:&#10;- add filtering users list for feature who are not part of the project&#10;&#10;change:&#10;- decomposition function height order &#10;- change paint user list if users length === 0&#10;&#10;style:&#10;- change style width popup for UserButtonPopup.vue">
+      <option name="closed" value="true" />
+      <created>1729497860410</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1729497860410</updated>
+    </task>
+    <task id="LOCAL-00013" summary="build:&#10;- create entities server">
+      <option name="closed" value="true" />
+      <created>1729497920449</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1729497920449</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,6 +295,8 @@
     <MESSAGE value="feature:&#10;- create check projects in projects module&#10;- create method for get token permission" />
     <MESSAGE value="change:&#10;- change function load projects (add valid length list project)" />
     <MESSAGE value="feature:&#10;- create member user adapter&#10;- add methods for get members and toggle target state project&#10;- add service project method update data&#10;&#10;change:&#10;- lint and prettier code.&#10;- decomposition function for imperial function" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature:&#10;- create member user adapter&#10;- add methods for get members and toggle target state project&#10;- add service project method update data&#10;&#10;change:&#10;- lint and prettier code.&#10;- decomposition function for imperial function" />
+    <MESSAGE value="feature:&#10;- add filtering users list for feature who are not part of the project&#10;&#10;change:&#10;- decomposition function height order &#10;- change paint user list if users length === 0&#10;&#10;style:&#10;- change style width popup for UserButtonPopup.vue" />
+    <MESSAGE value="build:&#10;- create entities server" />
+    <option name="LAST_COMMIT_MESSAGE" value="build:&#10;- create entities server" />
   </component>
 </project>

@@ -49,7 +49,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex column">
+  <div class="page">
     <Header />
     <slot />
     <Footer />
