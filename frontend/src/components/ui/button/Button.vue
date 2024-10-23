@@ -8,12 +8,7 @@ const onClick = () => emits('onClick')
 </script>
 
 <template>
-  <button
-    type="submit"
-    :class="['btn', variant, { outline }]"
-    @click="onClick"
-    v-ripple
-  >
+  <button type="submit" :class="['btn', variant, { outline }]" :disabled="isLoading" @click="onClick" v-ripple>
     <slot v-if="!isLoading" />
     <CircleSpinner v-else class="loader" />
   </button>

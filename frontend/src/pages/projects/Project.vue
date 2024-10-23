@@ -36,7 +36,9 @@ const loadProjectInfo = async () => {
     const jwtToken = sessionStore.getSession()?.getTokenPermission('jwt')
     if (!jwtToken) return false
     const projectData = await ProjectService.getProject(projectId, jwtToken.value)
-    project.value = new ProjectAdapter(projectData).adapt()
+    const currentProject = new ProjectAdapter(projectData).adapt()
+    listStore.addItemToList('projects', currentProject)
+    project.value = currentProject
   } else {
     project.value = currentProject
   }
@@ -72,6 +74,7 @@ onBeforeUnmount(() => {
     <div v-if="project" class="project-top">
       <SliderProject v-if="project?.images" :image-urls="project?.images" class="project-slider" />
       <ProjectInfo
+        v-if="project"
         :name="project?.name"
         :description="project?.description"
         :status="project?.status"

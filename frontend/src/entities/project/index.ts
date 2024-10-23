@@ -37,6 +37,12 @@ export class Project {
 
   addMember(member: Member) {
     this.members.push(member)
+    return this
+  }
+
+  deleteMember(memberId: number) {
+    this.members = this.members.filter((member) => member.id !== memberId)
+    return this
   }
 
   getMembers() {
@@ -45,5 +51,6 @@ export class Project {
 
   toggleTarget() {
     this.isTarget = !this.isTarget
+    return this
   }
 }

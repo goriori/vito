@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useSessionStore } from '@/stores/session.store.ts'
+import { TokenPermission } from '@/entities/session/types.ts'
+import { Session } from '@/entities/session'
+import { computed } from 'vue'
 
 const AuthView = () => import('@/pages/auth/Authorization.vue')
 const AccountView = () => import('@/pages/account/Account.vue')
@@ -69,8 +72,15 @@ const router = createRouter({
 })
 router.beforeEach((to, _from, next) => {
   const sessionStore = useSessionStore()
-  const haveSession = sessionStore.getSession()
-  if (to.name !== 'auth' && !haveSession) next({ name: 'auth' })
+  const haveSession = computed(() => sessionStore.getSession())
+  const localSession = localStorage.getItem('session')
+  if (localSession) {
+    const localSessionObject = JSON.parse(localSession)
+    const session = new Session(localSessionObject)
+    localSessionObject.tokens.forEach((token: TokenPermission) => session.setTokenPermission(token))
+    sessionStore.setSession(session)
+  }
+  if (to.name !== 'auth' && !haveSession.value) next({ name: 'auth' })
   else next()
 })
 export default router

@@ -18,12 +18,12 @@ defineProps<BProps>()
 <template>
   <ButtonPopup>
     <template #popup>
-      <div class="actions flex gap-2 text-color-fourthly">
+      <div class="actions flex center gap-2 text-color-fourthly">
         <component
           :is="popupComponent.action"
           v-for="popupComponent in popupComponents"
-          v-bind="popupComponent.settings"
           :key="popupComponent"
+          v-bind="{ memberId: member.id, ...popupComponent.settings }"
         />
       </div>
     </template>
@@ -33,4 +33,9 @@ defineProps<BProps>()
   </ButtonPopup>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+::v-deep(.popup) {
+  width: 100%;
+  padding: var(--space-sm) !important;
+}
+</style>

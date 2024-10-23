@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { useSessionStore } from '@/stores/session.store.ts'
 import { Member } from '@/entities/member/index.ts'
-import PersonList from '@/components/ui/list/member-list/PersonList.vue'
+import PersonList from '@/components/ui/list/member-list/MemberList.vue'
 import AddProjectMemberFeature from '@/features/add-project-member/AddProjectMemberFeature.vue'
 import ProjectTitle from '@/components/pages/project/project-info/ProjectTitle.vue'
 import AddProjectMemberModalFeature from '@/features/add-project-member-modal/AddProjectMemberModalFeature.vue'
 import { DeviceSize, useSizeWindow } from '@/utils/useSizeWindow.ts'
-import MemberWithActionsList from '@/components/ui/list/member-with-actions-list/MemberWithActionsList.vue'
 import MemberProjectEditListModule from '@/components/modules/list/member-project-edit/MemberProjectEditListModule.vue'
 
 type PProps = {
@@ -19,9 +18,10 @@ type PProps = {
   members: Member[]
   expenses: number
 }
-defineProps<PProps>()
+const props = defineProps<PProps>()
 const sessionStore = useSessionStore()
 const { deviceSize } = useSizeWindow()
+const members = computed(() => props.members)
 const role = ref(sessionStore.getSession()?.role.name)
 </script>
 

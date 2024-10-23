@@ -14,4 +14,7 @@ export const ERROR_MESSAGES = {
   JWT_TOKEN_EMPTY: {
     message: 'Отсутствует токен доступа',
   },
+  DELETE_MEMBER: {
+    message: 'При удалении участника проекта произошла ошибка, попробуйте позже',
+  },
 }

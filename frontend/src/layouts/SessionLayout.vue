@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Header from '@/components/globals/header/Header.vue'
 import Footer from '@/components/globals/footer/Footer.vue'
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { Project, ResponseProjects } from '@/services/projects/types.ts'
 import { ProjectAdapter } from '@/adapter/project/index.ts'
 import ProjectService from '@/services/projects/index.ts'
@@ -19,9 +19,8 @@ const listStore = useListStore()
 
 const pageId = ref(route.query.page)
 const jwtToken = computed(() => {
-  const findJwtToken = (token: TokenPermission) => token.type === 'jwt'
-  const token = sessionStore.getSession()?.tokens.find(findJwtToken)
-  if (!token) return ''
+  const token = sessionStore.getSession()?.getTokenPermission('jwt')
+  if (!token) return null
   return token.value
 })
 
@@ -40,19 +39,30 @@ const loadProjects = async (page: number) => {
     .catch(() => openErrorAlert(ERROR_MESSAGES.LOAD_PROJECTS))
 }
 
+const clearProjects = () => listStore.clearList('projects')
 onMounted(() => {
   if (pageId.value) {
     loadProjects(+pageId.value)
   }
 })
+
+onUnmounted(() => {
+  clearProjects()
+})
 </script>
 
 <template>
   <div class="page">
-    <Header />
+    <Header class="header"/>
     <slot />
     <Footer />
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+</style>

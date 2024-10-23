@@ -23,6 +23,7 @@ defineProps<LProps>()
       :popup-components="actions"
       :member-component="MemberChip"
       :member="member"
+      class="member cursor-pointer"
     />
   </List>
 </template>

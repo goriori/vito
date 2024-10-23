@@ -15,8 +15,7 @@ import UsersButtonPopup from '@/components/ui/button-popup/users/UsersButtonPopu
 const listStore = useListStore()
 const sessionStore = useSessionStore()
 
-const users = ref<UserServer[]>([])
-
+const users = computed(() => getUsersNotInProjects())
 const projectId = ref(+useRoute().params.id)
 const isLoading = ref(false)
 
@@ -75,7 +74,6 @@ const clearUserList = () => {
 
 onMounted(async () => {
   await loadUsers()
-  users.value = getUsersNotInProjects()
 })
 
 onUnmounted(() => {

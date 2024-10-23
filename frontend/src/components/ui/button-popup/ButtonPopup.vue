@@ -16,7 +16,7 @@ const onClickOutside = () => {
 
 <template>
   <article v-outside="onClickOutside" class="button-popup">
-    <section v-show="state" class="popup">
+    <section v-show="state" class="popup" @click="onToggle">
       <slot name="popup" />
     </section>
     <section class="button" @click="onToggle">
@@ -42,6 +42,7 @@ const onClickOutside = () => {
     padding: var(--space-md);
     background-color: var(--secondary-color);
     border-radius: var(--radius-md);
+    animation: var(--animation-time) default-display-card;
   }
 
   .button {
