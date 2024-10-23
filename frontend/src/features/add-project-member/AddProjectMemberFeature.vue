@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useListStore } from '@/stores/list.store.ts'
 import { useSessionStore } from '@/stores/session.store.ts'
 import { UserServer } from '@/services/users/types.ts'
@@ -88,7 +88,12 @@ const addUserToProject = async (user: UserServer) => {
   })
 }
 
-onMounted(async () => {
+const clearUserList = () => {
+  listStore.clearList('users')
+}
+
+onUnmounted(() => {
+  clearUserList()
 })
 </script>
 
