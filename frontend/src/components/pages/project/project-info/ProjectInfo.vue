@@ -2,11 +2,13 @@
 import { ref } from 'vue'
 import { useSessionStore } from '@/stores/session.store.ts'
 import { Member } from '@/entities/member/index.ts'
-import PersonList from '@/components/ui/list/person-list/PersonList.vue'
+import PersonList from '@/components/ui/list/member-list/PersonList.vue'
 import AddProjectMemberFeature from '@/features/add-project-member/AddProjectMemberFeature.vue'
 import ProjectTitle from '@/components/pages/project/project-info/ProjectTitle.vue'
 import AddProjectMemberModalFeature from '@/features/add-project-member-modal/AddProjectMemberModalFeature.vue'
 import { DeviceSize, useSizeWindow } from '@/utils/useSizeWindow.ts'
+import MemberWithActionsList from '@/components/ui/list/member-with-actions-list/MemberWithActionsList.vue'
+import MemberProjectEditListModule from '@/components/modules/list/member-project-edit/MemberProjectEditListModule.vue'
 
 type PProps = {
   name: string
@@ -30,7 +32,8 @@ const role = ref(sessionStore.getSession()?.role.name)
       <div class="members">
         <h2>Состав</h2>
         <div class="members-list">
-          <PersonList :members="members" />
+          <MemberProjectEditListModule v-if="role === 'director'" :members="members" />
+          <PersonList v-else :members="members" />
           <AddProjectMemberFeature v-if="role === 'director' && deviceSize > DeviceSize.MOBILE" />
           <AddProjectMemberModalFeature v-if="role === 'director' && deviceSize === DeviceSize.MOBILE" />
           <p v-if="members && members.length === 0">Состав не сформирован</p>

@@ -3,50 +3,29 @@ import { useRoute } from 'vue-router'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useListStore } from '@/stores/list.store.ts'
 import { useSessionStore } from '@/stores/session.store.ts'
-import { UserServer } from '@/services/users/types.ts'
+import { Member } from '@/entities/member/index.ts'
+import { Session } from '@/entities/session/index.ts'
 import { Project } from '@/entities/project/index.ts'
-import { TokenPermission } from '@/entities/session/types.ts'
-import { MemberUserAdapter } from '@/adapter/member'
+import { UserServer } from '@/services/users/types.ts'
+import { MemberUserAdapter } from '@/adapter/member/index.ts'
 import UserService from '@/services/users/index.ts'
 import ProjectService from '@/services/projects/index.ts'
 import UsersButtonPopup from '@/components/ui/button-popup/users/UsersButtonPopup.vue'
-import { Member } from '@/entities/member'
 
 const listStore = useListStore()
 const sessionStore = useSessionStore()
 
-const users = computed(() => {
-  const userList = listStore.getList('users')
-  if (userList.length === 0) return loadUsers()
-  else return getUsersNotInProjects()
-})
+const users = ref<UserServer[]>([])
 
 const projectId = ref(+useRoute().params.id)
 const isLoading = ref(false)
 
-const jwtToken = computed(() => {
-  const findJwtToken = (token: TokenPermission) => token.type === 'jwt'
-  const token = sessionStore.getSession()?.tokens.find(findJwtToken)
-  if (!token) return ''
-  return token.value
-})
-
 const loadUsers = async () => {
-  if (jwtToken.value) {
+  const jwtToken = (sessionStore.getSession() as Session)?.getTokenPermission('jwt')
+  if (jwtToken) {
     const userData = await UserService.getUsers(jwtToken.value)
-    const findCurrentProject = (project: Project) => project.id === projectId.value
     const addUserToList = (user: UserServer) => listStore.addItemToList('users', user)
-    const getMemberUsernames = (member: Member) => member.username
-    const project = listStore.getList('projects').find(findCurrentProject) as Project
-    const projectMemberUsernames = project.getMembers().map(getMemberUsernames)
     userData.forEach(addUserToList)
-    return userData
-      .map((user) => {
-        const haveUserInProject = projectMemberUsernames.find((memberUsername) => memberUsername === user.username)
-        if (!haveUserInProject) return user
-        else return false
-      })
-      .filter((user) => user)
   }
 }
 
@@ -62,7 +41,7 @@ const getUsersNotInProjects = () => {
       if (!haveUserInProject) return user
       else return false
     })
-    .filter((user) => user)
+    .filter((user) => user) as UserServer[]
 }
 
 const toggleLoadState = () => (isLoading.value = !isLoading.value)
@@ -70,6 +49,8 @@ const toggleLoadState = () => (isLoading.value = !isLoading.value)
 const addUserToProject = async (user: UserServer) => {
   const TIME_LOAD = 4000
   toggleLoadState()
+  const jwtToken = (sessionStore.getSession() as Session)?.getTokenPermission('jwt')
+  if (!jwtToken) return false
   const findProject = (project: Project) => project.id == projectId.value
   const project = listStore.getList('projects').find(findProject) as Project
   const newMember = new MemberUserAdapter(user).adapt()
@@ -91,6 +72,11 @@ const addUserToProject = async (user: UserServer) => {
 const clearUserList = () => {
   listStore.clearList('users')
 }
+
+onMounted(async () => {
+  await loadUsers()
+  users.value = getUsersNotInProjects()
+})
 
 onUnmounted(() => {
   clearUserList()
