@@ -2,7 +2,7 @@
 import Modal from '@/components/ui/modal/Modal.vue'
 import UserList from '@/components/ui/list/user-list/UserList.vue'
 import { useListStore } from '@/stores/list.store.ts'
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { TokenPermission } from '@/entities/session/types.ts'
 import UserService from '@/services/users'
@@ -44,9 +44,15 @@ const getUserList = () => {
     .filter((user) => user) as UserServer[]
 }
 
+const clearUserList = () => {
+  listStore.clearList('users')
+}
 onMounted(async () => {
   await loadUsers()
   users.value = getUserList()
+})
+onUnmounted(() => {
+  clearUserList()
 })
 </script>
 

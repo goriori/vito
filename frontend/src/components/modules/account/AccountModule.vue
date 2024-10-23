@@ -57,12 +57,7 @@ const toggleMenu = () => (isActive.value = !isActive.value)
       </div>
     </div>
     <div class="account-menu" v-if="isActive">
-      <div
-        v-for="item in menu"
-        :key="item.id"
-        @click="item.onClick"
-        class="menu-item"
-      >
+      <div v-for="item in menu" :key="item.id" @click="item.onClick" class="menu-item">
         <component :is="item.icon" class="icon" />
         <p>
           {{ item.title }}
@@ -100,7 +95,7 @@ const toggleMenu = () => (isActive.value = !isActive.value)
     position: absolute;
     z-index: 10;
     width: 250px;
-    right: 100px;
+    right: 0;
     display: flex;
     flex-direction: column;
     text-align: center;
