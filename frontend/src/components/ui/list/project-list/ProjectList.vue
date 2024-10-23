@@ -26,8 +26,6 @@ const onTargetCard = (event: PointerEvent) => {
     if (project) emits('onTargetCard', project)
   }
 }
-
-onMounted(() => console.log(deviceSize.value))
 </script>
 
 <template>

@@ -7,7 +7,6 @@ import ProjectsFilterModule from '@/components/modules/projecs-filter/ProejctsFi
 
 const route = useRoute()
 const router = useRouter()
-
 onMounted(() => {
   if (!route.query.page) {
     router.push('?page=1')
@@ -20,7 +19,7 @@ onMounted(() => {
     <section class="flex column gap-2">
       <div class="flex row between gap-2 a-i-center">
         <p class="title">Проекты</p>
-        <ProjectsFilterModule />
+        <!--        <ProjectsFilterModule />-->
       </div>
       <ProjectListModule />
     </section>

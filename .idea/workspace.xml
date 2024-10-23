@@ -4,11 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15edbcc2-9711-43ce-8a87-7c437546bb6c" name="Changes" comment="build:&#10;- create entities server">
+    <list default="true" id="15edbcc2-9711-43ce-8a87-7c437546bb6c" name="Changes" comment="change:&#10;- change class session layout.&#10;- change animation name for transition page">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/globals/modals/add-member-project/AddMemberModal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/pages/project/project-info/ProjectTitle.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/types/generated/contentTypes.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/types/generated/contentTypes.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/scss/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/adapter/member/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/adapter/member/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/globals/alerts/error-alert/ErrorAlert.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/globals/alerts/error-alert/ErrorAlert.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/globals/alerts/success-alert/SuccessAlert.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/globals/alerts/success-alert/SuccessAlert.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/globals/header/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/globals/header/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/globals/modals/test-modal/TestModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/globals/modals/test-modal/TestModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/modules/list/projects/ProjectListModule.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/modules/list/projects/ProjectListModule.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/project/project-details/ProjectDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/project/project-details/ProjectDetails.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/project/project-info/ProjectInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/project/project-info/ProjectInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/button-popup/ButtonPopup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/button-popup/ButtonPopup.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/button-popup/users/UsersButtonPopup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/button-popup/users/UsersButtonPopup.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/list/project-list/ProjectList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/list/project-list/ProjectList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/modal/Modal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/modal/Modal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/table/Table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/table/Table.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/add-project-member/AddProjectMemberFeature.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/add-project-member/AddProjectMemberFeature.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/layouts/SessionLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/layouts/SessionLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/account/Account.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/account/Account.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/auth/Authorization.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/auth/Authorization.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/projects/Project.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/projects/Project.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/projects/Projects.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/projects/Projects.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/stores/app.store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/stores/app.store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,36 +66,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/goriori/github/my_projects/vito/frontend/src/factories/projects/status&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\goriori\\github\\my_projects\\vito\\frontend\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\goriori\\github\\my_projects\\vito\\frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
+    "WebServerToolWindowPanel.toolwindow.show.date": "false",
+    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
+    "WebServerToolWindowPanel.toolwindow.show.size": "false",
+    "git-widget-placeholder": "dev",
+    "last_opened_file_path": "C:/goriori/github/my_projects/vito/frontend/src/factories/projects/status",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\goriori\\github\\my_projects\\vito\\frontend\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
+    "ts.external.directory.path": "C:\\goriori\\github\\my_projects\\vito\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;vue.recent.templates&quot;: [
-      &quot;Vue Options API Component&quot;,
-      &quot;Vue Composition API Component&quot;
+  "keyToStringList": {
+    "vue.recent.templates": [
+      "Vue Options API Component",
+      "Vue Composition API Component"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\goriori\github\my_projects\vito\frontend\src\factories\projects\status" />
@@ -155,6 +177,10 @@
       <workItem from="1729345496749" duration="6615000" />
       <workItem from="1729438644023" duration="9100000" />
       <workItem from="1729492380794" duration="5777000" />
+      <workItem from="1729604373541" duration="2599000" />
+      <workItem from="1729607396145" duration="841000" />
+      <workItem from="1729609990601" duration="10056000" />
+      <workItem from="1729656688162" duration="4727000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -260,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729497920449</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="change:&#10;- change class session layout.&#10;- change animation name for transition page">
+      <option name="closed" value="true" />
+      <created>1729604438262</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1729604438262</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,6 +331,7 @@
     <MESSAGE value="feature:&#10;- create member user adapter&#10;- add methods for get members and toggle target state project&#10;- add service project method update data&#10;&#10;change:&#10;- lint and prettier code.&#10;- decomposition function for imperial function" />
     <MESSAGE value="feature:&#10;- add filtering users list for feature who are not part of the project&#10;&#10;change:&#10;- decomposition function height order &#10;- change paint user list if users length === 0&#10;&#10;style:&#10;- change style width popup for UserButtonPopup.vue" />
     <MESSAGE value="build:&#10;- create entities server" />
-    <option name="LAST_COMMIT_MESSAGE" value="build:&#10;- create entities server" />
+    <MESSAGE value="change:&#10;- change class session layout.&#10;- change animation name for transition page" />
+    <option name="LAST_COMMIT_MESSAGE" value="change:&#10;- change class session layout.&#10;- change animation name for transition page" />
   </component>
 </project>

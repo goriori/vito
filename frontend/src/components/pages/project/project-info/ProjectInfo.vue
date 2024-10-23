@@ -5,6 +5,9 @@ import Chip from '@/components/ui/chip/Chip.vue'
 import PersonList from '@/components/ui/list/person-list/PersonList.vue'
 import AddProjectMemberFeature from '@/features/add-project-member/AddProjectMemberFeature.vue'
 import { ref } from 'vue'
+import ProjectTitle from '@/components/pages/project/project-info/ProjectTitle.vue'
+import AddButton from '@/components/ui/button/add/AddButton.vue'
+import { useApplicationStore } from '@/stores/app.store.ts'
 
 type PProps = {
   name: string
@@ -17,27 +20,23 @@ type PProps = {
 }
 defineProps<PProps>()
 const sessionStore = useSessionStore()
+const applicationStore = useApplicationStore()
 const role = ref(sessionStore.getSession()?.role.name)
+const openModalAddMember = () => {
+  applicationStore.getModal('add-member-project')?.onShow()
+}
 </script>
 
 <template>
   <div class="info">
-    <div class="info-top">
-      <div class="info-title">
-        <h1 class="title">{{ name }}</h1>
-        <p class="address">{{ address }}</p>
-      </div>
-      <div class="info-statuses">
-        <Chip rounded variant="secondary" class="status">{{ type }}</Chip>
-        <Chip rounded variant="secondary" class="status">{{ status }}</Chip>
-      </div>
-    </div>
+    <ProjectTitle :address="address" :name="name" :type="type" :status="status" />
     <div class="info-center">
       <div class="members">
         <h2>Состав</h2>
         <div class="members-list">
           <PersonList :members="members" />
-          <AddProjectMemberFeature v-if="role === 'director'" />
+          <!--          <AddProjectMemberFeature v-if="role === 'director'" />-->
+          <AddButton :is-loading="false" @click="openModalAddMember" />
           <p v-if="members && members.length === 0">Состав не сформирован</p>
         </div>
       </div>
@@ -63,23 +62,6 @@ const role = ref(sessionStore.getSession()?.role.name)
   background-color: var(--fourth-color);
   gap: var(--space-xs);
 
-  &-top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-
-  &-statuses {
-    display: flex;
-    justify-content: center;
-    flex: 0 1 200px;
-    gap: var(--space-sm);
-
-    .status {
-      flex: 0 1 150px;
-    }
-  }
-
   &-center {
     display: flex;
     flex-direction: column;
@@ -92,16 +74,6 @@ const role = ref(sessionStore.getSession()?.role.name)
     align-items: center;
     gap: var(--space-lg);
     font-size: var(--secondary-font-size);
-  }
-
-  &-title {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
-
-    .address {
-      font-size: var(--secondary-font-size);
-    }
   }
 
   &-center {
@@ -126,6 +98,8 @@ const role = ref(sessionStore.getSession()?.role.name)
   &-list {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    max-width: 800px;
     gap: var(--space-sm);
   }
 }

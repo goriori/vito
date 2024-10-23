@@ -34,14 +34,8 @@ const menu = ref([
         <Image :href="avatar" alt="avatar" class="avatar" rounded />
         <p class="name">{{ session?.username }}</p>
       </article>
-      <article class="account-menu">
-        <Button
-          v-for="item in menu"
-          :key="item"
-          variant="quaternary"
-          class="menu-item"
-          @on-click="item.onClick"
-        >
+      <article class="account-menu-desktop">
+        <Button v-for="item in menu" :key="item" variant="quaternary" class="menu-item" @on-click="item.onClick">
           <component :is="item.icon" class="icon" />
           <p>{{ item.title }}</p>
         </Button>
@@ -50,15 +44,26 @@ const menu = ref([
     <div class="info">
       <AccountInfoForm />
     </div>
+    <article class="account-menu-mobile">
+      <Button v-for="item in menu" :key="item" variant="quaternary" class="menu-item" @on-click="item.onClick">
+        <component :is="item.icon" class="icon" />
+        <p>{{ item.title }}</p>
+      </Button>
+    </article>
   </div>
 </template>
 
 <style scoped lang="scss">
+@import '@/assets/scss/variables';
+
 .content {
   width: 100%;
   display: flex;
   padding: var(--space-xl);
   gap: var(--space-xl);
+  @media (max-width: $md4 + px) {
+    flex-direction: column;
+  }
 }
 
 .account,
@@ -103,8 +108,15 @@ const menu = ref([
     }
   }
 
-  &-menu {
+  &-menu-desktop {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-sm);
+  }
+
+  &-menu-mobile {
+    display: none;
     flex-direction: column;
     justify-content: center;
     gap: var(--space-sm);
@@ -137,6 +149,29 @@ const menu = ref([
     .icon {
       max-height: 24px;
       max-width: 24px;
+    }
+  }
+}
+
+@media (max-width: $md4 + px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .account {
+    max-width: none;
+    flex: 0 1 200px;
+
+    &-avatar {
+      max-height: none;
+    }
+
+    &-menu-desktop {
+      display: none;
+    }
+
+    &-menu-mobile {
+      display: block;
     }
   }
 }

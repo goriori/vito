@@ -1,14 +1,22 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted, useTemplateRef } from 'vue'
 import { TEmits, TProps } from '@/components/ui/table/types.ts'
 
 const emits = defineEmits<TEmits>()
 const props = defineProps<TProps>()
+const tableElement = useTemplateRef<HTMLDivElement | null>('table')
 const countColumns = computed(() => props.columns.length)
+const widthColumn = computed(() => {
+  if (tableElement.value?.offsetWidth) {
+    return Math.round(tableElement.value?.offsetWidth / countColumns.value)
+  }
+})
+const repeatValue = computed(() => `${countColumns.value}, ${widthColumn.value}px`)
+onMounted(() => {})
 </script>
 
 <template>
-  <div class="table">
+  <div ref="table" class="table">
     <section class="table-header">
       <div class="table-columns">
         <p v-for="column in columns" :key="column">{{ column }}</p>
@@ -51,7 +59,7 @@ const countColumns = computed(() => props.columns.length)
   &-row {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(v-bind(countColumns), 1fr);
+    grid-template-columns: repeat(v-bind(repeatValue));
     padding: var(--space-sm);
     border-radius: var(--radius-sm);
   }
@@ -63,10 +71,11 @@ const countColumns = computed(() => props.columns.length)
   }
 
   &-row {
+    width: 100%;
     color: var(--fourth-color);
     background-color: var(--secondary-color);
     @media (max-width: $md4 + px) {
-      font-size: 10px;
+      font-size: 8px;
     }
   }
 }

@@ -39,7 +39,9 @@ const onTarget = (user: UserServer) => {
 ::v-deep(.button),
 .action {
   max-width: 50px;
+  max-height: 38px;
 }
+
 ::v-deep(.popup) {
   width: 400px;
 }

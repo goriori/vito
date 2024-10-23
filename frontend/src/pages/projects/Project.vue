@@ -19,7 +19,6 @@ import SliderProject from '@/components/pages/project/slider-project/SliderProje
 import ProjectInfo from '@/components/pages/project/project-info/ProjectInfo.vue'
 import ProjectDetails from '@/components/pages/project/project-details/ProjectDetails.vue'
 import { useListStore } from '@/stores/list.store.ts'
-import { TokenPermission } from '@/entities/session/types.ts'
 
 const router = useRouter()
 const route = useRoute()
@@ -32,10 +31,9 @@ const project = ref<Project | null>(null)
 const loadProjectInfo = async () => {
   applicationStore.toggleStateLoadingApplication()
   const findCurrentProject = (project: Project) => project.isTarget
-  const findJwtToken = (token: TokenPermission) => token.type === 'jwt'
   const currentProject = listStore.getList('projects').find(findCurrentProject)
   if (!currentProject) {
-    const jwtToken = sessionStore.getSession()?.tokens.find(findJwtToken)
+    const jwtToken = sessionStore.getSession()?.getTokenPermission('jwt')
     if (!jwtToken) return false
     const projectData = await ProjectService.getProject(projectId, jwtToken.value)
     project.value = new ProjectAdapter(projectData).adapt()

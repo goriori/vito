@@ -8,8 +8,7 @@ const router = useRouter()
 const sessionStore = useSessionStore()
 
 onMounted(() => {
-  if (sessionStore.getSession())
-    router.push({ name: 'projects', query: { page: 1 } })
+  if (sessionStore.getSession()) router.push({ name: 'projects', query: { page: 1 } })
 })
 </script>
 

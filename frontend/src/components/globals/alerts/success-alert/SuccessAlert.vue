@@ -13,16 +13,13 @@ const onClose = () => emits('onClose')
 </script>
 
 <template>
-  <Alert
-    color="default"
-    @on-click="onClose"
-    @on-time-out="onClose"
-    class="alert"
-  >
+  <Alert color="default" class="alert" @on-click="onClose" @on-time-out="onClose">
     {{ message }}
   </Alert>
 </template>
 
 <style scoped lang="scss">
-
+.alert {
+  text-align: center;
+}
 </style>

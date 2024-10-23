@@ -14,12 +14,9 @@ defineProps<PProps>()
   <div class="project-details">
     <h2 class="title">Детали проекта</h2>
     <div v-if="details.tables" class="tables">
-      <div v-for="table in details.tables" :key="table.id" class="table">
+      <div v-for="table in details.tables" :key="table.id" class="table-item">
         <h3>{{ table.attributes.title }}</h3>
-        <Table
-          :columns="table.attributes.fields"
-          :rows="table.attributes.items"
-        />
+        <Table :columns="table.attributes.fields" :rows="table.attributes.items" />
       </div>
     </div>
   </div>
@@ -49,6 +46,8 @@ defineProps<PProps>()
   grid-template-columns: repeat(3, 1fr);
   text-align: center;
   gap: var(--space-sm);
+  overflow-x: auto;
+
   @media (max-width: $md1 + px) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -57,7 +56,7 @@ defineProps<PProps>()
   }
 }
 
-.table {
+.table-item {
   width: 100%;
   display: flex;
   flex-direction: column;

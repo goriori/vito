@@ -3,14 +3,13 @@ import AccountModule from '@/components/modules/account/AccountModule.vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
-const redirectToProjects = () =>
-  router.push({ name: 'projects', query: { page: 1 } })
+const redirectToProjects = () => router.push({ name: 'projects', query: { page: 1 } })
 </script>
 
 <template>
   <header class="header">
     <section class="left">
-      <h1 class="logo" @click="redirectToProjects">Frame Construction</h1>
+      <h1 class="logo" @click="redirectToProjects">Vito's Vault</h1>
     </section>
     <section class="center"></section>
     <section class="right">
@@ -38,6 +37,7 @@ const redirectToProjects = () =>
 .logo {
   cursor: pointer;
   font-size: 40px;
+  text-transform: uppercase;
   @media (max-width: $md4 + px) {
     font-size: var(--primary-font-size);
   }

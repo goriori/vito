@@ -9,15 +9,12 @@ const onClose = () => emits('onClickBackground')
 const onClickContent = () => emits('onClickContent')
 const onMount = () => emits('onMount')
 onMounted(() => {
-  tl.from('.popup-base', { scaleX: 5, scaleY: 10, duration: 0.3 }).from(
-    '.popup-content',
-    {
-      top: 0,
-      scale: 0,
-      duration: 0.3,
-    }
-  )
-  onMount()
+  tl.from('.popup-base', { scaleX: 5, scaleY: 10, duration: 0.3 }).from('.popup-content', {
+    top: 0,
+    scale: 0,
+    duration: 0.3,
+    onComplete: onMount,
+  })
 })
 </script>
 

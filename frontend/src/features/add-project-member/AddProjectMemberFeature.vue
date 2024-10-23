@@ -15,7 +15,12 @@ import { Member } from '@/entities/member'
 const listStore = useListStore()
 const sessionStore = useSessionStore()
 
-const users = ref<UserServer[]>([])
+const users = computed(() => {
+  const userList = listStore.getList('users')
+  if (userList.length === 0) return loadUsers()
+  else return getUsersNotInProjects()
+})
+
 const projectId = ref(+useRoute().params.id)
 const isLoading = ref(false)
 
@@ -35,22 +40,29 @@ const loadUsers = async () => {
     const project = listStore.getList('projects').find(findCurrentProject) as Project
     const projectMemberUsernames = project.getMembers().map(getMemberUsernames)
     userData.forEach(addUserToList)
-    userData.forEach((user) => {
-      const haveUserInProject = projectMemberUsernames.find((memberUsername) => memberUsername === user.username)
-      if (!haveUserInProject) users.value.push(user)
-    })
+    return userData
+      .map((user) => {
+        const haveUserInProject = projectMemberUsernames.find((memberUsername) => memberUsername === user.username)
+        if (!haveUserInProject) return user
+        else return false
+      })
+      .filter((user) => user)
   }
 }
+
 const getUsersNotInProjects = () => {
   const userList = listStore.getList('users') as UserServer[]
   const findCurrentProject = (project: Project) => project.id === projectId.value
   const getMemberUsernames = (member: Member) => member.username
   const project = listStore.getList('projects').find(findCurrentProject) as Project
   const projectMemberUsernames = project.getMembers().map(getMemberUsernames)
-  userList.forEach((user) => {
-    const haveUserInProject = projectMemberUsernames.find((memberUsername) => memberUsername === user.username)
-    if (!haveUserInProject) users.value.push(user)
-  })
+  return userList
+    .map((user) => {
+      const haveUserInProject = projectMemberUsernames.find((memberUsername) => memberUsername === user.username)
+      if (!haveUserInProject) return user
+      else return false
+    })
+    .filter((user) => user)
 }
 
 const toggleLoadState = () => (isLoading.value = !isLoading.value)
@@ -77,10 +89,6 @@ const addUserToProject = async (user: UserServer) => {
 }
 
 onMounted(async () => {
-  console.log('mount')
-  const userList = listStore.getList('users')
-  if (userList.length === 0) await loadUsers()
-  else getUsersNotInProjects()
 })
 </script>
 
@@ -91,5 +99,6 @@ onMounted(async () => {
 <style scoped lang="scss">
 .feature {
   max-width: 50px;
+  max-height: 38px;
 }
 </style>
