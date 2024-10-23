@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15edbcc2-9711-43ce-8a87-7c437546bb6c" name="Changes" comment="change:&#10;- change classes account page (on mobile and desktop sections)&#10;- change ref on computed load users &#10;- lint and prettier code &#10;- change api url&#10;- change position text alerts&#10;&#10;build:&#10;- create modal add member project&#10;- create project title for project info component&#10;&#10;style:&#10;- add max height user button popup&#10;- add wrap list members&#10;- add adaptive project page and account">
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/add-project-member-modal/AddProjectMemberModalFeature.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/globals/modals/add-member-project/AddMemberModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/globals/modals/add-member-project/AddMemberModal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/project/project-info/ProjectInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/project/project-info/ProjectInfo.vue" afterDir="false" />
-    </list>
+    <list default="true" id="15edbcc2-9711-43ce-8a87-7c437546bb6c" name="Changes" comment="feature:&#10;- create feature add project member modal&#10;- add clear user list when call hook on unmounted &#10;- add render feature of size window project info&#10;&#10;change:&#10;- change position right account menu" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -158,7 +153,7 @@
       <workItem from="1729604373541" duration="2599000" />
       <workItem from="1729607396145" duration="841000" />
       <workItem from="1729609990601" duration="10056000" />
-      <workItem from="1729656688162" duration="6212000" />
+      <workItem from="1729656688162" duration="6595000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -280,7 +275,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729661796565</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feature:&#10;- create feature add project member modal&#10;- add clear user list when call hook on unmounted &#10;- add render feature of size window project info&#10;&#10;change:&#10;- change position right account menu">
+      <option name="closed" value="true" />
+      <created>1729663598810</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1729663598810</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,6 +322,7 @@
     <MESSAGE value="build:&#10;- create entities server" />
     <MESSAGE value="change:&#10;- change class session layout.&#10;- change animation name for transition page" />
     <MESSAGE value="change:&#10;- change classes account page (on mobile and desktop sections)&#10;- change ref on computed load users &#10;- lint and prettier code &#10;- change api url&#10;- change position text alerts&#10;&#10;build:&#10;- create modal add member project&#10;- create project title for project info component&#10;&#10;style:&#10;- add max height user button popup&#10;- add wrap list members&#10;- add adaptive project page and account" />
-    <option name="LAST_COMMIT_MESSAGE" value="change:&#10;- change classes account page (on mobile and desktop sections)&#10;- change ref on computed load users &#10;- lint and prettier code &#10;- change api url&#10;- change position text alerts&#10;&#10;build:&#10;- create modal add member project&#10;- create project title for project info component&#10;&#10;style:&#10;- add max height user button popup&#10;- add wrap list members&#10;- add adaptive project page and account" />
+    <MESSAGE value="feature:&#10;- create feature add project member modal&#10;- add clear user list when call hook on unmounted &#10;- add render feature of size window project info&#10;&#10;change:&#10;- change position right account menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature:&#10;- create feature add project member modal&#10;- add clear user list when call hook on unmounted &#10;- add render feature of size window project info&#10;&#10;change:&#10;- change position right account menu" />
   </component>
 </project>

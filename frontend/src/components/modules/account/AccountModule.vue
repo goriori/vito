@@ -132,7 +132,7 @@ const toggleMenu = () => (isActive.value = !isActive.value)
     right: -100px;
   }
   100% {
-    right: 100px;
+    right: 0;
   }
 }
 </style>
