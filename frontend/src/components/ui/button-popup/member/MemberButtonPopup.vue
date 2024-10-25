@@ -16,7 +16,7 @@ defineProps<BProps>()
 </script>
 
 <template>
-  <ButtonPopup>
+  <ButtonPopup popup-position="top">
     <template #popup>
       <div class="actions flex center gap-2 text-color-fourthly">
         <component
