@@ -43,6 +43,8 @@ const clearProjects = () => listStore.clearList('projects')
 onMounted(() => {
   if (pageId.value) {
     loadProjects(+pageId.value)
+  } else {
+    loadProjects(1)
   }
 })
 
@@ -53,7 +55,7 @@ onUnmounted(() => {
 
 <template>
   <div class="page">
-    <Header class="header"/>
+    <Header class="header" />
     <slot />
     <Footer />
   </div>
