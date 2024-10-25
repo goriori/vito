@@ -7,6 +7,7 @@ import ErrorAlert from '@/components/globals/alerts/error-alert/ErrorAlert.vue'
 import SuccessAlert from '@/components/globals/alerts/success-alert/SuccessAlert.vue'
 import AddMemberModal from '@/components/globals/modals/add-member-project/AddMemberModal.vue'
 import MemberInfoModal from '@/components/globals/modals/member-info/MemberInfoModal.vue'
+import CreateTableModal from '@/components/globals/modals/create/table/CreateTableModal.vue'
 
 export const useApplicationStore = defineStore('application', () => {
   const isLoading = ref(false)
@@ -15,8 +16,12 @@ export const useApplicationStore = defineStore('application', () => {
     new Modal('get-data-modal', shallowRef(TestModal)),
     new Modal('add-member-project', shallowRef(AddMemberModal)),
     new Modal('member-info', shallowRef(MemberInfoModal)),
+    new Modal('create-table', shallowRef(CreateTableModal)),
   ])
-  const alerts = ref<Alert[]>([new Alert('error', shallowRef(ErrorAlert)), new Alert('success', shallowRef(SuccessAlert))])
+  const alerts = ref<Alert[]>([
+    new Alert('error', shallowRef(ErrorAlert)),
+    new Alert('success', shallowRef(SuccessAlert)),
+  ])
   const getModals = () => modals.value
   const getAlerts = () => alerts.value
   const getAlert = (name: string) => {
@@ -30,7 +35,8 @@ export const useApplicationStore = defineStore('application', () => {
 
   const getStateLoadingApplication = () => isLoading.value
 
-  const toggleStateLoadingApplication = () => (isLoading.value = !isLoading.value)
+  const toggleStateLoadingApplication = () =>
+    (isLoading.value = !isLoading.value)
 
   return {
     getModals,

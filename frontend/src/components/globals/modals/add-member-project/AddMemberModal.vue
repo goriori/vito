@@ -87,7 +87,7 @@ onUnmounted(() => {
   <Modal @on-click-background="onClose">
     <template #window>
       <div class="window flex column gap-3">
-        <h2 class="window-title">Выберите пользователя которого хотите добавить</h2>
+        <h2 class="window-title">Выберите пользователя </h2>
         <section class="list">
           <CircleSpinner v-if="isLoading" class="list-loader" />
           <UserList v-else :users="users" @on-target="addUserToProject" />

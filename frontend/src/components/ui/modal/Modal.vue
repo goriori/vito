@@ -32,7 +32,7 @@ onMounted(() => {
   &-base {
     position: fixed;
     inset: 0;
-    z-index: 100;
+    z-index: 90;
     display: flex;
     justify-content: center;
     align-items: center;

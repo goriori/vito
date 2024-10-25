@@ -3,6 +3,6 @@ export type AProps = {
   password: string
 }
 export type AEmits = {
-  (eventName: 'onSuccess'): void
-  (eventName: 'onError'): void
+  (_eventName: 'onSuccess'): void
+  (_eventName: 'onError'): void
 }
