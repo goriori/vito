@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Table from '@/components/ui/table/Table.vue'
 import { ProjectTable } from '@/services/projects/types.ts'
+import CreateProjectDetailsFeature from '@/features/create-project-details/CreateProjectDetailsFeature.vue'
 
 type PProps = {
   details: {
@@ -12,7 +13,10 @@ defineProps<PProps>()
 
 <template>
   <div class="project-details">
-    <h2 class="title">Детали проекта</h2>
+    <div class="details-header flex a-i-center between">
+      <h2 class="title">Детали проекта</h2>
+      <CreateProjectDetailsFeature />
+    </div>
     <div v-if="details.tables" class="tables">
       <div v-for="table in details.tables" :key="table.id" class="table-item">
         <h3>{{ table.attributes.title }}</h3>

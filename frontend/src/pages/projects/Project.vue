@@ -6,19 +6,12 @@ import { useSessionStore } from '@/stores/session.store.ts'
 import { Project } from '@/entities/project/index.ts'
 import { ProjectAdapter } from '@/adapter/project/index.ts'
 import { ERROR_MESSAGES } from '@/utils/configs/errors.config.ts'
-import {
-  YandexMap,
-  YandexMapControls,
-  YandexMapDefaultSchemeLayer,
-  YandexMapZoomControl,
-  YandexMapDefaultMarker,
-  YandexMapDefaultFeaturesLayer,
-} from 'vue-yandex-maps'
 import ProjectService from '@/services/projects/index.ts'
 import SliderProject from '@/components/pages/project/slider-project/SliderProject.vue'
 import ProjectInfo from '@/components/pages/project/project-info/ProjectInfo.vue'
 import ProjectDetails from '@/components/pages/project/project-details/ProjectDetails.vue'
 import { useListStore } from '@/stores/list.store.ts'
+import ProjectLocationMapModule from '@/components/modules/maps/project-location/ProjectLocationMapModule.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -31,14 +24,12 @@ const project = ref<Project | null>(null)
 const loadProjectInfo = async () => {
   applicationStore.toggleStateLoadingApplication()
   const findCurrentProject = (project: Project) => project.isTarget
-  const currentProject = listStore.getList('projects').find(findCurrentProject)
+  const currentProject = (listStore.getList('projects') as Project[]).find(findCurrentProject)
   if (!currentProject) {
     const jwtToken = sessionStore.getSession()?.getTokenPermission('jwt')
     if (!jwtToken) return false
     const projectData = await ProjectService.getProject(projectId, jwtToken.value)
-    const currentProject = new ProjectAdapter(projectData).adapt()
-    listStore.addItemToList('projects', currentProject)
-    project.value = currentProject
+    project.value = new ProjectAdapter(projectData).adapt()
   } else {
     project.value = currentProject
   }
@@ -54,15 +45,14 @@ const stopLoadAfterTimeout = () => {
   setTimeout(applicationStore.toggleStateLoadingApplication, TIMEOUT)
 }
 
+const handlerErrorLoadData = () => {
+  applicationStore.toggleStateLoadingApplication()
+  applicationStore.getAlert('error')?.setSettings(ERROR_MESSAGES.LOAD_DATA).onShow()
+  router.push({ name: 'projects', query: { page: 1 } })
+}
+
 onMounted(async () => {
-  Promise.all([validHaveProjectId(), loadProjectInfo()])
-    .then(stopLoadAfterTimeout)
-    .then(() => console.log(project.value))
-    .catch(() => {
-      applicationStore.toggleStateLoadingApplication()
-      applicationStore.getAlert('error')?.setSettings(ERROR_MESSAGES.LOAD_DATA).onShow()
-      router.push({ name: 'projects', query: { page: 1 } })
-    })
+  Promise.all([validHaveProjectId(), loadProjectInfo()]).then(stopLoadAfterTimeout).catch(handlerErrorLoadData)
 })
 onBeforeUnmount(() => {
   project.value?.toggleTarget()
@@ -86,34 +76,10 @@ onBeforeUnmount(() => {
       />
     </div>
     <div v-if="project" class="project-center">
-      <ProjectDetails :details="project?.details" />
+      <ProjectDetails v-if="project?.details" :details="project?.details" />
     </div>
     <section class="location">
-      <yandex-map
-        :settings="{
-          location: {
-            center: project?.coordinates,
-            zoom: 10,
-          },
-          showScaleInCopyrights: true,
-        }"
-        height="100vh"
-        class="map"
-      >
-        <yandex-map-default-features-layer />
-        <yandex-map-default-scheme-layer :settings="{ theme: 'dark' }" />
-        <yandex-map-controls :settings="{ position: 'right' }">
-          <yandex-map-zoom-control />
-        </yandex-map-controls>
-
-        <yandex-map-default-marker
-          :settings="{
-            coordinates: project?.coordinates,
-            color: 'red',
-            title: 'Объект',
-          }"
-        />
-      </yandex-map>
+      <ProjectLocationMapModule v-if="project?.coordinates" :coordinates="project?.coordinates" />
     </section>
   </div>
 </template>

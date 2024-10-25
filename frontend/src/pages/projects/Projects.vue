@@ -3,7 +3,7 @@ import { onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import ProjectListModule from '@/components/modules/list/projects/ProjectListModule.vue'
 import PaginationModule from '@/components/modules/pagination/PaginationModule.vue'
-import ProjectsFilterModule from '@/components/modules/projecs-filter/ProejctsFilterModule.vue'
+import ProjectsFilterModule from '@/components/modules/projects-filter/ProejctsFilterModule.vue'
 
 const route = useRoute()
 const router = useRouter()
