@@ -12,7 +12,7 @@ class ProjectService extends Service {
       const { data, meta } = await this.request({
         url: '/api/projects',
         params: {
-          populate: 'preview,type,status,members,tables,images',
+          populate: 'preview,type,status,members.avatar,members.skills,tables,images',
           'pagination[page]': page,
         },
         headers: {
@@ -34,7 +34,7 @@ class ProjectService extends Service {
       const { data } = await this.request({
         url: `/api/projects/${projectId}`,
         params: {
-          populate: 'images,status,type,members,tables',
+          populate: 'images,status,type,members.avatar,members.skills,tables',
         },
         headers: {
           Authorization: `Bearer ${token}`,

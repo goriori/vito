@@ -17,7 +17,7 @@ const actions = [
   },
   {
     action: InfoProjectMemberModalFeature,
-    settings: {},
+    settings: { projectId },
   },
 ]
 </script>

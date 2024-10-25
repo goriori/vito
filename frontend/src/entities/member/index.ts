@@ -6,7 +6,8 @@ export type MemberOption = {
   username: string
   email: string
   dateBirth: string
-  skills: string
+  skills: string[]
+  avatar: string
 }
 
 export class Member {
@@ -17,18 +18,10 @@ export class Member {
   username: string
   email: string
   dateBirth: string
-  skills: string
+  skills: string[]
+  avatar: string
 
-  constructor({
-    id,
-    name,
-    surname,
-    lastname,
-    username,
-    email,
-    dateBirth,
-    skills,
-  }: MemberOption) {
+  constructor({ id, name, surname, lastname, username, email, dateBirth, skills, avatar }: MemberOption) {
     this.id = id
     this.name = name
     this.surname = surname
@@ -37,5 +30,6 @@ export class Member {
     this.email = email
     this.dateBirth = dateBirth
     this.skills = skills
+    this.avatar = avatar
   }
 }

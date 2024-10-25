@@ -4,30 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15edbcc2-9711-43ce-8a87-7c437546bb6c" name="Changes" comment="feature:&#10;- create member button popup ui component&#10;- create ui  member with actions list&#10;- create module member project edit list for role director&#10;&#10;change:&#10;- add module component to member list project info  &#10;- rename used component PersonList &#10;- change position member chip, rewrite on flex - start&#10;- change users in AddProjectMemberFeature.vue  on ref and change get jwtToken">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ui/button/delete/DeleteButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ui/button/info/InfoButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ui/icons/InfoIcon.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/delete-project-member/DeleteProjectMemberFeature.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/info-project-member-modal/InfoProjectMemberModalFeature.vue" afterDir="false" />
+    <list default="true" id="15edbcc2-9711-43ce-8a87-7c437546bb6c" name="Changes" comment="feature:&#10;- create DeleteProjectMemberFeature.vue&#10;- create InfoProjectMemberModalFeature.vue&#10;- create validating session on life call loop router&#10;&#10;build:&#10;- build InfoButton.vue&#10;- build InfoIcon.vue&#10;- build DeleteButton.vue&#10;&#10;change:&#10;- change ref on computed users list in AddProjectMemberFeature.vue&#10;- change button base ui component&#10;- change popup width and padding space &#10;- change actions MemberProjectEditListModule.vue">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/globals/modals/member-info/MemberInfoModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/scss/bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/scss/bootstrap.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/scss/mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/scss/mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/adapter/member/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/adapter/member/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/modules/list/member-project-edit/MemberProjectEditListModule.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/modules/list/member-project-edit/MemberProjectEditListModule.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/project/project-info/ProjectInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/project/project-info/ProjectInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/button-popup/ButtonPopup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/button-popup/ButtonPopup.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/button-popup/member/MemberButtonPopup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/button-popup/member/MemberButtonPopup.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/button/Button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/button/Button.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/icons/DeleteIcon.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/icons/DeleteIcon.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/list/member-list/PersonList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/list/member-list/MemberList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/list/member-with-actions-list/MemberWithActionsList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/list/member-with-actions-list/MemberWithActionsList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/entities/project/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/entities/project/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/add-project-member/AddProjectMemberFeature.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/add-project-member/AddProjectMemberFeature.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/layouts/SessionLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/layouts/SessionLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/entities/member/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/entities/member/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/info-project-member-modal/InfoProjectMemberModalFeature.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/info-project-member-modal/InfoProjectMemberModalFeature.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/projects/Project.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/projects/Project.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/utils/configs/errors.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/configs/errors.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/utils/configs/success.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/configs/success.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/projects/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/projects/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/projects/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/projects/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/stores/app.store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/stores/app.store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +168,9 @@
       <workItem from="1729607396145" duration="841000" />
       <workItem from="1729609990601" duration="10056000" />
       <workItem from="1729656688162" duration="12367000" />
-      <workItem from="1729689371886" duration="9442000" />
+      <workItem from="1729689371886" duration="13834000" />
+      <workItem from="1729771781467" duration="7000" />
+      <workItem from="1729838186075" duration="528000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -332,7 +324,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729669398882</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="feature:&#10;- create DeleteProjectMemberFeature.vue&#10;- create InfoProjectMemberModalFeature.vue&#10;- create validating session on life call loop router&#10;&#10;build:&#10;- build InfoButton.vue&#10;- build InfoIcon.vue&#10;- build DeleteButton.vue&#10;&#10;change:&#10;- change ref on computed users list in AddProjectMemberFeature.vue&#10;- change button base ui component&#10;- change popup width and padding space &#10;- change actions MemberProjectEditListModule.vue">
+      <option name="closed" value="true" />
+      <created>1729701386094</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1729701386094</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,6 +375,7 @@
     <MESSAGE value="change:&#10;- change animation account menu finish position" />
     <MESSAGE value="feature:&#10;- create feature aadd user to project in AddMemberModal.vue.&#10;- add clear user list when call hook on unmount AddProjectMemberFeature.vue" />
     <MESSAGE value="feature:&#10;- create member button popup ui component&#10;- create ui  member with actions list&#10;- create module member project edit list for role director&#10;&#10;change:&#10;- add module component to member list project info  &#10;- rename used component PersonList &#10;- change position member chip, rewrite on flex - start&#10;- change users in AddProjectMemberFeature.vue  on ref and change get jwtToken" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature:&#10;- create member button popup ui component&#10;- create ui  member with actions list&#10;- create module member project edit list for role director&#10;&#10;change:&#10;- add module component to member list project info  &#10;- rename used component PersonList &#10;- change position member chip, rewrite on flex - start&#10;- change users in AddProjectMemberFeature.vue  on ref and change get jwtToken" />
+    <MESSAGE value="feature:&#10;- create DeleteProjectMemberFeature.vue&#10;- create InfoProjectMemberModalFeature.vue&#10;- create validating session on life call loop router&#10;&#10;build:&#10;- build InfoButton.vue&#10;- build InfoIcon.vue&#10;- build DeleteButton.vue&#10;&#10;change:&#10;- change ref on computed users list in AddProjectMemberFeature.vue&#10;- change button base ui component&#10;- change popup width and padding space &#10;- change actions MemberProjectEditListModule.vue" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature:&#10;- create DeleteProjectMemberFeature.vue&#10;- create InfoProjectMemberModalFeature.vue&#10;- create validating session on life call loop router&#10;&#10;build:&#10;- build InfoButton.vue&#10;- build InfoIcon.vue&#10;- build DeleteButton.vue&#10;&#10;change:&#10;- change ref on computed users list in AddProjectMemberFeature.vue&#10;- change button base ui component&#10;- change popup width and padding space &#10;- change actions MemberProjectEditListModule.vue" />
   </component>
 </project>

@@ -92,7 +92,7 @@ onBeforeUnmount(() => {
       <yandex-map
         :settings="{
           location: {
-            center: [53.24321, 56.943247],
+            center: project?.coordinates,
             zoom: 10,
           },
           showScaleInCopyrights: true,

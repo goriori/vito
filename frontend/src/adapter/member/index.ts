@@ -18,7 +18,8 @@ export class MemberProjectAdapter {
       username: this.data.attributes.username,
       email: this.data.attributes.email,
       dateBirth: this.data.attributes.dateBirth,
-      skills: this.data.attributes.skills,
+      skills: this.data.attributes.skills.data.map((skill) => skill.attributes.title),
+      avatar: this.data.attributes.avatar.data.url,
     })
   }
 }
@@ -39,7 +40,8 @@ export class MemberUserAdapter {
       username: this.data.username,
       email: this.data.email,
       dateBirth: this.data.dateBirth,
-      skills: this.data.skills,
+      skills: this.data.skills.map((skill) => skill.title),
+      avatar: this.data.avatar.url,
     })
   }
 }
