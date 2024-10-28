@@ -4,5 +4,5 @@ export type BProps = {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'quaternary'
 }
 export type BEmits = {
-  (eventName: 'onClick'): void
+  (_eventName: 'onClick', _event: Event): void
 }

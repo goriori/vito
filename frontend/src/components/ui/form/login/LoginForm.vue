@@ -6,13 +6,13 @@ import { ref } from 'vue'
 
 defineProps<FComponents>()
 const form = ref({
-  login: '',
+  identifier: '',
   password: '',
 })
 
 const clearForm = () => {
   console.log('success')
-  form.value.login = ''
+  form.value.identifier = ''
   form.value.password = ''
 }
 </script>
@@ -21,7 +21,7 @@ const clearForm = () => {
   <Form class="form">
     <p class="form-title">Авторизация</p>
     <Input
-      v-model="form.login"
+      v-model="form.identifier"
       outlined
       type="text"
       placeholder="Введите логин"
@@ -39,6 +39,7 @@ const clearForm = () => {
         :key="action"
         v-bind="form"
         @on-success="clearForm"
+        @on-error="clearForm"
       />
     </div>
   </Form>

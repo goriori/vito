@@ -1,6 +1,4 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
-import { types } from 'sass'
-import Error = types.Error
 
 export class Service {
   serviceFetch: AxiosInstance
@@ -26,10 +24,10 @@ export class Service {
     try {
       const response = await this.serviceFetch(config)
       return response.data
-    } catch (e) {
+    } catch (e: any) {
       console.log(e)
       console.error(new Error('error request'))
-      throw false
+      throw e.response.status
     }
   }
 }

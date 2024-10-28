@@ -1,38 +1,41 @@
 <script setup lang="ts">
-import Header from '@/components/globals/header/Header.vue'
-import Footer from '@/components/globals/footer/Footer.vue'
+import { onMounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import ProjectListModule from '@/components/modules/list/projects/ProjectListModule.vue'
+import PaginationModule from '@/components/modules/pagination/PaginationModule.vue'
+import ProjectsFilterModule from '@/components/modules/projects-filter/ProejctsFilterModule.vue'
+
+const route = useRoute()
+const router = useRouter()
+onMounted(() => {
+  if (!route.query.page) {
+    router.push('?page=1')
+  }
+})
 </script>
 
 <template>
-  <div class="page">
-    <section class="page-top">
-      <Header />
-    </section>
-    <section class="page-center">
+  <div class="flex column between gap-3 p-2 container projects">
+    <section class="flex column gap-2">
+      <div class="flex row between gap-2 a-i-center">
+        <p class="title">Проекты</p>
+        <!--        <ProjectsFilterModule />-->
+      </div>
       <ProjectListModule />
     </section>
-    <section class="page-bottom">
-      <Footer />
-    </section>
+    <PaginationModule />
   </div>
 </template>
 
 <style scoped lang="scss">
-.page {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  background-color: var(--secondary-color);
+@import '@/assets/scss/variables';
 
-  &-top {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-  }
-
-  &-center {
-    margin: 0 auto;
+.title {
+  font-weight: bold;
+  font-size: 40px;
+  color: #fff;
+  @media (max-width: $md4 + px) {
+    font-size: var(--primary-font-size);
   }
 }
 </style>

@@ -3,7 +3,7 @@ export type FProps = {
 }
 
 export type FEmits = {
-  (eventName: 'onSubmit', fields: HTMLInputElement[]): void
+  (_eventName: 'onSubmit', fields: HTMLInputElement[]): void
 }
 
 export type FComponents = {

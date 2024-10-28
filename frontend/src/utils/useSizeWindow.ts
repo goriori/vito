@@ -1,4 +1,5 @@
 import { computed } from 'vue'
+import { useWindowSize } from '@vueuse/core'
 
 const DESKTOP_WIDTH = 1760
 const LAPTOP_WIDTH = 1240
@@ -13,7 +14,7 @@ export enum DeviceSize {
 }
 
 export const useSizeWindow = () => {
-  const width = computed(() => document.body.offsetWidth)
+  const { width } = useWindowSize()
   const deviceSize = computed<DeviceSize>(() => {
     if (width.value >= DeviceSize.DESKTOP) return DeviceSize.DESKTOP
     if (width.value >= DeviceSize.LAPTOP) return DeviceSize.LAPTOP

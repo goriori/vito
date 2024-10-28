@@ -49,7 +49,7 @@ module.exports = {
     'no-lone-blocks': 'error',
     'no-magic-numbers': [
       'error',
-      { ignore: [1], ignoreArrayIndexes: true, ignoreDefaultValues: true }
+      { ignore: [0,1], ignoreArrayIndexes: true, ignoreDefaultValues: true }
     ],
     'array-callback-return': 'error',
 

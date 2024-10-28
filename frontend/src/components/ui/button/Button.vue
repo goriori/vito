@@ -4,13 +4,14 @@ import { BEmits, BProps } from '@/components/ui/button/types.ts'
 
 defineProps<BProps>()
 const emits = defineEmits<BEmits>()
-const onClick = () => emits('onClick')
+const onClick = (event: Event) => emits('onClick', event)
 </script>
 
 <template>
   <button
     type="submit"
     :class="['btn', variant, { outline }]"
+    :disabled="isLoading"
     @click="onClick"
     v-ripple
   >

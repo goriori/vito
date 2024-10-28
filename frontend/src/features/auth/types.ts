@@ -1,8 +1,8 @@
 export type AProps = {
-    login: string
-    password: string
+  identifier: string
+  password: string
 }
 export type AEmits = {
-    (eventName: 'onSuccess'): void
-    (eventName: 'onError'): void
+  (_eventName: 'onSuccess'): void
+  (_eventName: 'onError'): void
 }

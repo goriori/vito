@@ -11,13 +11,14 @@ const timeoutId = ref<number | undefined>(undefined)
 const onClick = () => emits('onClick')
 const openAnimation = (onComplete?: () => void) => {
   gsap.from('.alert', {
+    top: -100,
     scale: 0,
     duration: 0.3,
     onComplete,
   })
 }
 const closeAnimation = (onComplete?: () => void) => {
-  gsap.to('.alert', { scale: 0, onComplete })
+  gsap.to('.alert', { scale: 0, top: -100, onComplete })
 }
 const createTimeout = () => {
   timeoutId.value = setTimeout(() => {
@@ -45,12 +46,7 @@ onUnmounted(() => {
 
 <style scoped lang="scss">
 .alert {
-  position: fixed;
   overflow: hidden;
-  top: 10px;
-  left: 50%;
-  z-index: 100;
-  transform: translate(-50%, 0);
   color: black;
   font-weight: 600;
   padding: var(--space-sm);
