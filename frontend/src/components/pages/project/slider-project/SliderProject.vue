@@ -7,7 +7,6 @@ type SProps = {
   imageUrls: string[]
 }
 const props = defineProps<SProps>()
-
 const buildDataImage = () =>
   props.imageUrls.map((image) => ({
     href: window.API + image,
@@ -18,7 +17,14 @@ const images = ref(buildDataImage())
 </script>
 
 <template>
-  <Slider navigation scrollbar :slides="images" :component="Image" />
+  <Slider
+    v-if="images.length > 0"
+    navigation
+    scrollbar
+    :slides="images"
+    :component="Image"
+  />
+  <Image v-else rounded href="/images/noimage.jpg" />
 </template>
 
 <style scoped lang="scss"></style>

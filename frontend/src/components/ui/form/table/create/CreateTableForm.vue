@@ -44,6 +44,7 @@ const onError = () => {
       placeholder="Названия полей"
       required
     />
+    <p>Название полей должно быть разделено запятой</p>
     <div class="form-actions">
       <component
         :is="action"

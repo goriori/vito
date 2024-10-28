@@ -4,22 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15edbcc2-9711-43ce-8a87-7c437546bb6c" name="Changes" comment="change:&#10;- change print width prettier on default value&#10;- decomposition project page (move out yandex map)&#10;- change paths">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/globals/modals/create/table/CreateTableModal.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/create-table/CreateTableFeature.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/create-table/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/services/tables/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/services/tables/types.ts" afterDir="false" />
+    <list default="true" id="15edbcc2-9711-43ce-8a87-7c437546bb6c" name="Changes" comment="feature:&#10;- create CreateTableFeature.vue&#10;- create table service&#10;&#10;build:&#10;- build new modal for create table&#10;- build form for create table&#10;&#10;change:&#10;- change error and success config. Add for message create table.&#10;- change z-index modal &#10;&#10;fix:&#10;- fix warnings">
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/noimage.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/globals/modals/add-item-table/AddItemTableModal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/globals/modals/confirm/ConfirmModal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/globals/modals/create/project/CreateProjectModal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/modules/project-setting/ProjectSettingModule.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ui/button-popup/settings/SettingButtonPopup.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ui/cards/add-project-card/AddProjectCard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ui/form/project/create/CreateProjectForm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ui/form/table-item/create/CreateTableItemForm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ui/icons/DotsIcon.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/add-project-image/AddProjectImageFeature.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/add-table-item-modal/AddTableItemModalFeature.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/add-table-item/AddTableItemFeature.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/create-project-modal/CreateProjectModalFeature.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/create-project/CreateProjectFeature.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/create-project/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/delete-project-card/DeleteProjectCardFeature.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/delete-project-table/DeleteProjectTableFeature.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/delete-project/DeleteProjectFeature.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/globals/modals/add-member-project/AddMemberModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/globals/modals/add-member-project/AddMemberModal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/form/login/LoginForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/form/login/LoginForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/scss/bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/scss/bootstrap.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/modules/list/projects/ProjectListModule.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/modules/list/projects/ProjectListModule.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/project/project-details/ProjectDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/project/project-details/ProjectDetails.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/project/project-info/ProjectInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/project/project-info/ProjectInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/project/slider-project/SliderProject.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/project/slider-project/SliderProject.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/button-popup/users/UsersButtonPopup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/button-popup/users/UsersButtonPopup.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/button/Button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/button/Button.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/button/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/button/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/cards/project-card/ProjectCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/cards/project-card/ProjectCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/cards/project-card/ProjectMobileCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/cards/project-card/ProjectMobileCard.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/form/table/create/CreateTableForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/form/table/create/CreateTableForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/form/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/form/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/modal/Modal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/modal/Modal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/auth/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/auth/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/list/project-list/ProjectList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/list/project-list/ProjectList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/table/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/table/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/entities/project/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/entities/project/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/add-project-member/AddProjectMemberFeature.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/add-project-member/AddProjectMemberFeature.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/features/create-project-details/CreateProjectDetailsFeature.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/create-project-details/CreateProjectDetailsFeature.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/users/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/users/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/delete-project-member/DeleteProjectMemberFeature.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/delete-project-member/DeleteProjectMemberFeature.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/info-project-member-modal/InfoProjectMemberModalFeature.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/info-project-member-modal/InfoProjectMemberModalFeature.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/projects/Project.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/projects/Project.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/projects/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/projects/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/tables/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/tables/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/stores/app.store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/stores/app.store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/stores/list.store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/stores/list.store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/utils/configs/errors.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/configs/errors.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/utils/configs/success.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/configs/success.config.ts" afterDir="false" />
     </list>
@@ -33,8 +61,8 @@
       <list>
         <option value="tsconfig.json" />
         <option value="Vue Options API Component" />
-        <option value="Vue Composition API Component" />
         <option value="TypeScript File" />
+        <option value="Vue Composition API Component" />
       </list>
     </option>
   </component>
@@ -57,43 +85,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/goriori/github/my_projects/vito/frontend/src/factories/projects/status&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\goriori\\github\\my_projects\\vito\\frontend\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.grazie&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\goriori\\github\\my_projects\\vito\\frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
+    "WebServerToolWindowPanel.toolwindow.show.date": "false",
+    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
+    "WebServerToolWindowPanel.toolwindow.show.size": "false",
+    "git-widget-placeholder": "dev",
+    "last_opened_file_path": "C:/goriori/github/my_projects/vito/frontend/public/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\goriori\\github\\my_projects\\vito\\frontend\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
+    "ts.external.directory.path": "C:\\goriori\\github\\my_projects\\vito\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;vue.recent.templates&quot;: [
-      &quot;Vue Options API Component&quot;,
-      &quot;Vue Composition API Component&quot;
+  "keyToStringList": {
+    "vue.recent.templates": [
+      "Vue Options API Component",
+      "Vue Composition API Component"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\goriori\github\my_projects\vito\frontend\public\images" />
       <recent name="C:\goriori\github\my_projects\vito\frontend\src\factories\projects\status" />
       <recent name="C:\goriori\github\my_projects\vito\frontend\src\pages" />
       <recent name="C:\goriori\github\my_projects\vito\frontend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\goriori\github\my_projects\vito\frontend\src\features\add-table-item-modal" />
+      <recent name="C:\goriori\github\my_projects\vito\frontend\src\components\globals\modals\confirm" />
       <recent name="C:\goriori\github\my_projects\vito\frontend\public\images\account" />
       <recent name="C:\goriori\github\my_projects\vito\frontend\public\images\projects" />
     </key>
@@ -174,7 +205,11 @@
       <workItem from="1729656688162" duration="12367000" />
       <workItem from="1729689371886" duration="13834000" />
       <workItem from="1729771781467" duration="7000" />
-      <workItem from="1729838186075" duration="10479000" />
+      <workItem from="1729838186075" duration="22550000" />
+      <workItem from="1730044598407" duration="5836000" />
+      <workItem from="1730098568211" duration="102000" />
+      <workItem from="1730104946284" duration="4369000" />
+      <workItem from="1730117657428" duration="8278000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -376,7 +411,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729842991135</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="feature:&#10;- create CreateTableFeature.vue&#10;- create table service&#10;&#10;build:&#10;- build new modal for create table&#10;- build form for create table&#10;&#10;change:&#10;- change error and success config. Add for message create table.&#10;- change z-index modal &#10;&#10;fix:&#10;- fix warnings">
+      <option name="closed" value="true" />
+      <created>1729855995525</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1729855995525</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,7 +443,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init project" />
     <MESSAGE value="feature:&#10;- create optimization auto run projects" />
     <MESSAGE value="change:&#10;- update files frontend application template" />
     <MESSAGE value="refactoring:&#10;- decomposition types on new file type.ts ui components" />
@@ -425,7 +467,8 @@
     <MESSAGE value="feature:&#10;- create CreateProjectDetailsFeature.vue&#10;- create ProjectLocationMapModule.vue&#10;&#10;build:&#10;- build CreateTableForm.vue" />
     <MESSAGE value="feature:&#10;- add load projects session layout if not have url param pageId." />
     <MESSAGE value="change:&#10;- change print width prettier on default value&#10;- decomposition project page (move out yandex map)&#10;- change paths" />
-    <option name="LAST_COMMIT_MESSAGE" value="change:&#10;- change print width prettier on default value&#10;- decomposition project page (move out yandex map)&#10;- change paths" />
+    <MESSAGE value="feature:&#10;- create CreateTableFeature.vue&#10;- create table service&#10;&#10;build:&#10;- build new modal for create table&#10;- build form for create table&#10;&#10;change:&#10;- change error and success config. Add for message create table.&#10;- change z-index modal &#10;&#10;fix:&#10;- fix warnings" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature:&#10;- create CreateTableFeature.vue&#10;- create table service&#10;&#10;build:&#10;- build new modal for create table&#10;- build form for create table&#10;&#10;change:&#10;- change error and success config. Add for message create table.&#10;- change z-index modal &#10;&#10;fix:&#10;- fix warnings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -433,8 +476,12 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/frontend/src/services/tables/index.ts</url>
           <line>5</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/components/globals/modals/create/project/CreateProjectModal.vue</url>
+          <line>8</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

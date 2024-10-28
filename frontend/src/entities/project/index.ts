@@ -10,7 +10,7 @@ export class Project {
   status: string
   address: string
   images: string[]
-  members: Member[] | []
+  members: Member[]
   coordinates: number[]
   description: string
   details: {

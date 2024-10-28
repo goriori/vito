@@ -38,6 +38,11 @@ export const useListStore = defineStore('list', () => {
     lists.value[listName].currentPage
   const setCurrentPageList = (listName: keyof ListStore, page: number) =>
     (lists.value[listName].currentPage = page)
+  const deleteItemList = (listName: keyof ListStore, id: number) => {
+    lists.value[listName].list = lists.value[listName].list.filter(
+      (item) => item.id !== id
+    )
+  }
   const clearList = (listName: keyof ListStore) =>
     (lists.value[listName].list = [])
   return {
@@ -48,6 +53,7 @@ export const useListStore = defineStore('list', () => {
     setCountPageList,
     getCurrentPageList,
     setCurrentPageList,
-    clearList
+    deleteItemList,
+    clearList,
   }
 })

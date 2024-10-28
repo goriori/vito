@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import Card from '@/components/ui/cards/Card.vue'
 import Chip from '@/components/ui/chip/Chip.vue'
+import SettingButtonPopup from '@/components/ui/button-popup/settings/SettingButtonPopup.vue'
+import Image from '@/components/ui/image/Image.vue'
 
 type CProps = {
   preview: string
@@ -18,7 +20,8 @@ const serverUrl = window.API
     <template #card-top></template>
     <template #card-center>
       <div class="card-content">
-        <img :src="serverUrl + preview" alt="" />
+        <img v-if="preview" :src="serverUrl + preview" alt="" />
+        <img v-else src="/images/noimage.jpg" alt="" />
         <div class="card-group">
           <p class="card-title">{{ title }}</p>
           <p class="card-address">{{ address }}</p>

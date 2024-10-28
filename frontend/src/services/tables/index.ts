@@ -24,6 +24,26 @@ class TableService extends Service {
       throw e
     }
   }
+
+  async updateTable(
+    tableId: number,
+    payload: { data: object },
+    jwtToken: string
+  ) {
+    try {
+      return await this.request({
+        method: 'put',
+        url: `/api/tables/${tableId}`,
+        headers: {
+          Authorization: `Bearer ${jwtToken}`,
+        },
+        data: payload,
+      })
+    } catch (e) {
+      console.log(e)
+      throw e
+    }
+  }
 }
 
 export default new TableService()

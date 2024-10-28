@@ -7,12 +7,16 @@ class ProjectService extends Service {
     super.setBaseUrl(window.API)
   }
 
-  async getProjects(token: string, page: number = 1): Promise<ResponseProjects> {
+  async getProjects(
+    token: string,
+    page: number = 1
+  ): Promise<ResponseProjects> {
     try {
       const { data, meta } = await this.request({
         url: '/api/projects',
         params: {
-          populate: 'preview,type,status,members.avatar,members.skills,tables,images',
+          populate:
+            'preview,type,status,members.avatar,members.skills,tables,images',
           'pagination[page]': page,
         },
         headers: {
@@ -47,7 +51,11 @@ class ProjectService extends Service {
     }
   }
 
-  async updateProject(projectId: number, payloadData: { data: object }, token: string) {
+  async updateProject(
+    projectId: number,
+    payloadData: { data: object },
+    token: string
+  ) {
     try {
       await this.request({
         url: `/api/projects/${projectId}`,
@@ -56,6 +64,37 @@ class ProjectService extends Service {
           Authorization: `Bearer ${token}`,
         },
         data: payloadData,
+      })
+    } catch (e) {
+      console.log(e)
+      throw e
+    }
+  }
+
+  async createProject(payloadData: { data: object }, token: string) {
+    try {
+      await this.request({
+        url: '/api/projects',
+        method: 'post',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        data: payloadData,
+      })
+    } catch (e) {
+      console.log(e)
+      throw e
+    }
+  }
+
+  async deleteProject(projectId: number, token: string) {
+    try {
+      await this.request({
+        url: `/api/projects/${projectId}`,
+        method: 'delete',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       })
     } catch (e) {
       console.log(e)

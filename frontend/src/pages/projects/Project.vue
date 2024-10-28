@@ -24,11 +24,16 @@ const project = ref<Project | null>(null)
 const loadProjectInfo = async () => {
   applicationStore.toggleStateLoadingApplication()
   const findCurrentProject = (project: Project) => project.isTarget
-  const currentProject = (listStore.getList('projects') as Project[]).find(findCurrentProject)
+  const currentProject = (listStore.getList('projects') as Project[]).find(
+    findCurrentProject
+  )
   if (!currentProject) {
     const jwtToken = sessionStore.getSession()?.getTokenPermission('jwt')
     if (!jwtToken) return false
-    const projectData = await ProjectService.getProject(projectId, jwtToken.value)
+    const projectData = await ProjectService.getProject(
+      projectId,
+      jwtToken.value
+    )
     project.value = new ProjectAdapter(projectData).adapt()
   } else {
     project.value = currentProject
@@ -47,12 +52,17 @@ const stopLoadAfterTimeout = () => {
 
 const handlerErrorLoadData = () => {
   applicationStore.toggleStateLoadingApplication()
-  applicationStore.getAlert('error')?.setSettings(ERROR_MESSAGES.LOAD_DATA).onShow()
+  applicationStore
+    .getAlert('error')
+    ?.setSettings(ERROR_MESSAGES.LOAD_DATA)
+    .onShow()
   router.push({ name: 'projects', query: { page: 1 } })
 }
 
 onMounted(async () => {
-  Promise.all([validHaveProjectId(), loadProjectInfo()]).then(stopLoadAfterTimeout).catch(handlerErrorLoadData)
+  Promise.all([validHaveProjectId(), loadProjectInfo()])
+    .then(stopLoadAfterTimeout)
+    .catch(handlerErrorLoadData)
 })
 onBeforeUnmount(() => {
   project.value?.toggleTarget()
@@ -62,9 +72,14 @@ onBeforeUnmount(() => {
 <template>
   <div class="content">
     <div v-if="project" class="project-top">
-      <SliderProject v-if="project?.images" :image-urls="project?.images" class="project-slider" />
+      <SliderProject
+        v-if="project?.images"
+        :image-urls="project?.images"
+        class="project-slider"
+      />
       <ProjectInfo
         v-if="project"
+        :id="project.id"
         :name="project?.name"
         :description="project?.description"
         :status="project?.status"
@@ -76,10 +91,17 @@ onBeforeUnmount(() => {
       />
     </div>
     <div v-if="project" class="project-center">
-      <ProjectDetails v-if="project?.details" :details="project?.details" />
+      <ProjectDetails
+        v-if="project?.details"
+        :details="project?.details"
+        :project-id="project.id"
+      />
     </div>
     <section class="location">
-      <ProjectLocationMapModule v-if="project?.coordinates" :coordinates="project?.coordinates" />
+      <ProjectLocationMapModule
+        v-if="project?.coordinates"
+        :coordinates="project?.coordinates"
+      />
     </section>
   </div>
 </template>

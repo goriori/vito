@@ -21,6 +21,11 @@ const actions = [
         .onShow()
     },
   },
+  // {
+  //   id: 2,
+  //   title: 'Добавить таблицу',
+  //   onClick: () => {},
+  // },
 ]
 </script>
 
@@ -50,7 +55,7 @@ const actions = [
   color: var(--fourth-color);
 
   :deep(.popup) {
-    width: 180px;
+    width: 200px;
   }
 }
 </style>

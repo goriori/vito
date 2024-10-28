@@ -8,6 +8,9 @@ import SuccessAlert from '@/components/globals/alerts/success-alert/SuccessAlert
 import AddMemberModal from '@/components/globals/modals/add-member-project/AddMemberModal.vue'
 import MemberInfoModal from '@/components/globals/modals/member-info/MemberInfoModal.vue'
 import CreateTableModal from '@/components/globals/modals/create/table/CreateTableModal.vue'
+import ConfirmModal from '@/components/globals/modals/confirm/ConfirmModal.vue'
+import AddItemTableModal from '@/components/globals/modals/add-item-table/AddItemTableModal.vue'
+import CreateProjectModal from '@/components/globals/modals/create/project/CreateProjectModal.vue'
 
 export const useApplicationStore = defineStore('application', () => {
   const isLoading = ref(false)
@@ -15,8 +18,11 @@ export const useApplicationStore = defineStore('application', () => {
   const modals = ref<Modal[]>([
     new Modal('get-data-modal', shallowRef(TestModal)),
     new Modal('add-member-project', shallowRef(AddMemberModal)),
-    new Modal('member-info', shallowRef(MemberInfoModal)),
+    new Modal('add-item-table', shallowRef(AddItemTableModal)),
     new Modal('create-table', shallowRef(CreateTableModal)),
+    new Modal('create-project', shallowRef(CreateProjectModal)),
+    new Modal('member-info', shallowRef(MemberInfoModal)),
+    new Modal('confirm', shallowRef(ConfirmModal)),
   ])
   const alerts = ref<Alert[]>([
     new Alert('error', shallowRef(ErrorAlert)),

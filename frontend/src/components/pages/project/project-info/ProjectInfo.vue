@@ -8,8 +8,10 @@ import ProjectTitle from '@/components/pages/project/project-info/ProjectTitle.v
 import AddProjectMemberModalFeature from '@/features/add-project-member-modal/AddProjectMemberModalFeature.vue'
 import { DeviceSize, useSizeWindow } from '@/utils/useSizeWindow.ts'
 import MemberProjectEditListModule from '@/components/modules/list/member-project-edit/MemberProjectEditListModule.vue'
+import DeleteProjectFeature from '@/features/delete-project/DeleteProjectFeature.vue'
 
 type PProps = {
+  id: number
   name: string
   type: string
   address: string
@@ -23,19 +25,29 @@ const sessionStore = useSessionStore()
 const { deviceSize } = useSizeWindow()
 const members = computed(() => props.members)
 const role = ref(sessionStore.getSession()?.role.name)
+const isDirector = role.value === 'director'
 </script>
 
 <template>
   <div class="info">
-    <ProjectTitle :address="address" :name="name" :type="type" :status="status" />
+    <ProjectTitle
+      :address="address"
+      :name="name"
+      :type="type"
+      :status="status"
+    />
     <div class="info-center">
       <div class="members">
         <h2>Состав</h2>
         <div class="members-list">
-          <MemberProjectEditListModule v-if="role === 'director'" :members="members" />
+          <MemberProjectEditListModule v-if="isDirector" :members="members" />
           <PersonList v-else :members="members" />
-          <AddProjectMemberFeature v-if="role === 'director' && deviceSize > DeviceSize.MOBILE" />
-          <AddProjectMemberModalFeature v-if="role === 'director' && deviceSize === DeviceSize.MOBILE" />
+          <AddProjectMemberFeature
+            v-if="isDirector && deviceSize > DeviceSize.MOBILE"
+          />
+          <AddProjectMemberModalFeature
+            v-if="isDirector && deviceSize === DeviceSize.MOBILE"
+          />
           <p v-if="members && members.length === 0">Состав не сформирован</p>
         </div>
       </div>
@@ -43,6 +55,7 @@ const role = ref(sessionStore.getSession()?.role.name)
     </div>
     <div class="info-bottom">
       <!--      <h2>Затрачено: {{ expenses }} Р</h2>-->
+      <DeleteProjectFeature v-if="isDirector" :project-id="id" />
     </div>
   </div>
 </template>

@@ -20,20 +20,39 @@ const sessionStore = useSessionStore()
 const applicationStore = useApplicationStore()
 const isLoading = ref(false)
 const successHandler = () => {
-  applicationStore.getAlert('success')?.setSettings(SUCCESS_MESSAGES.DELETE_MEMBER).onShow()
+  applicationStore
+    .getAlert('success')
+    ?.setSettings(SUCCESS_MESSAGES.DELETE_MEMBER)
+    .onShow()
 }
 const errorHandler = () => {
-  applicationStore.getAlert('success')?.setSettings(ERROR_MESSAGES.DELETE_MEMBER).onShow()
+  applicationStore
+    .getAlert('success')
+    ?.setSettings(ERROR_MESSAGES.DELETE_MEMBER)
+    .onShow()
 }
 const toggleLoading = () => (isLoading.value = !isLoading.value)
-
+const openCofirmModal = () => {
+  applicationStore
+    .getModal('confirm')
+    ?.setSettings({
+      message: 'Вы уверены что хотите удалить пользователя из проекта',
+      successHandler: deleteMemberProject,
+      cancelHandler: () => {},
+    })
+    .onShow()
+}
 const deleteMemberProject = () => {
   toggleLoading()
   const projectId = props.projectId
   const memberId = props.memberId
-  const jwtToken = (sessionStore.getSession() as Session)?.getTokenPermission('jwt')
+  const jwtToken = (sessionStore.getSession() as Session)?.getTokenPermission(
+    'jwt'
+  )
   if (!jwtToken) return
-  const currentProject = listStore.getList('projects').find((project) => project.id == projectId) as Project
+  const currentProject = listStore
+    .getList('projects')
+    .find((project) => project.id == projectId) as Project
   const currentMemberIds = currentProject
     .deleteMember(memberId)
     .getMembers()
@@ -43,16 +62,24 @@ const deleteMemberProject = () => {
       members: currentMemberIds,
     },
   }
-  ProjectService.updateProject(projectId, payload, jwtToken.value).then(successHandler).catch(errorHandler).finally(toggleLoading)
+  ProjectService.updateProject(projectId, payload, jwtToken.value)
+    .then(successHandler)
+    .catch(errorHandler)
+    .finally(toggleLoading)
 }
 </script>
 
 <template>
-  <DeleteButton :is-loading="isLoading" class="feature" @click="deleteMemberProject" />
+  <DeleteButton
+    :is-loading="isLoading"
+    class="feature"
+    @click="openCofirmModal"
+  />
 </template>
 
 <style scoped lang="scss">
 .feature {
+  color: var(--error-color);
   max-width: 50px;
   max-height: 38px;
 }

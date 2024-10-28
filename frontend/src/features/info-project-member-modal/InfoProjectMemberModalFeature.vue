@@ -31,6 +31,7 @@ const openMemberInfo = () => {
 
 <style scoped lang="scss">
 .feature {
+  color:var(--warning-color);
   max-width: 50px;
   max-height: 38px;
 }

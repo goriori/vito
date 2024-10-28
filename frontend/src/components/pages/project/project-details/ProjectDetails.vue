@@ -2,25 +2,50 @@
 import Table from '@/components/ui/table/Table.vue'
 import { ProjectTable } from '@/services/projects/types.ts'
 import CreateProjectDetailsFeature from '@/features/create-project-details/CreateProjectDetailsFeature.vue'
+import DeleteProjectTableFeature from '@/features/delete-project-table/DeleteProjectTableFeature.vue'
+import AddTableItemFeature from '@/features/add-table-item-modal/AddTableItemModalFeature.vue'
+import { useSessionStore } from '@/stores/session.store.ts'
+import { ref } from 'vue'
 
 type PProps = {
+  projectId: number
   details: {
     tables: ProjectTable[]
   }
 }
 defineProps<PProps>()
+const sessionStore = useSessionStore()
+const role = ref(sessionStore.getSession()?.role.name)
 </script>
 
 <template>
   <div class="project-details">
     <div class="details-header flex a-i-center between">
       <h2 class="title">Детали проекта</h2>
-      <CreateProjectDetailsFeature />
+      <CreateProjectDetailsFeature v-if="role === 'director'" />
     </div>
     <div v-if="details.tables" class="tables">
       <div v-for="table in details.tables" :key="table.id" class="table-item">
-        <h3>{{ table.attributes.title }}</h3>
-        <Table :columns="table.attributes.fields" :rows="table.attributes.items" />
+        <div class="item-head flex between a-i-center">
+          <div></div>
+          <h3>{{ table.attributes.title }}</h3>
+          <div class="actions flex gap-1">
+            <AddTableItemFeature
+              v-if="role === 'director'"
+              :project-id="projectId"
+              :table-id="table.id"
+            />
+            <DeleteProjectTableFeature
+              v-if="role === 'director'"
+              :project-id="projectId"
+              :table-id="table.id"
+            />
+          </div>
+        </div>
+        <Table
+          :columns="table.attributes.fields"
+          :rows="table.attributes.items || []"
+        />
       </div>
     </div>
   </div>
@@ -65,5 +90,9 @@ defineProps<PProps>()
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+
+  .actions {
+    width: 60px;
+  }
 }
 </style>

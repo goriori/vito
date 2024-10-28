@@ -7,6 +7,7 @@ import List from '@/components/ui/list/List.vue'
 import ProjectMobileCard from '@/components/ui/cards/project-card/ProjectMobileCard.vue'
 
 type LProps = {
+  actions: object[]
   projects: Project[]
 }
 type LEmits = {
@@ -33,6 +34,7 @@ const onTargetCard = (event: PointerEvent) => {
     <List :column-space="10" :columns="3" @click="onTargetCard">
       <ProjectCard
         v-for="project in projects"
+        :id="project.id"
         :key="project.id"
         :data-id="project.id"
         :title="project.name"
@@ -49,6 +51,7 @@ const onTargetCard = (event: PointerEvent) => {
     <List :column-space="10" :columns="3" @click="onTargetCard">
       <ProjectCard
         v-for="project in projects"
+        :id="project.id"
         :key="project.id"
         :data-id="project.id"
         :title="project.name"
@@ -66,6 +69,7 @@ const onTargetCard = (event: PointerEvent) => {
     <List :column-space="10" :columns="2" @click="onTargetCard">
       <ProjectCard
         v-for="project in projects"
+        :id="project.id"
         :key="project.id"
         :data-id="project.id"
         :title="project.name"
@@ -82,6 +86,7 @@ const onTargetCard = (event: PointerEvent) => {
     <List :column-space="10" :columns="2" @click="onTargetCard">
       <ProjectMobileCard
         v-for="project in projects"
+        :id="project.id"
         :key="project.id"
         :data-id="project.id"
         :title="project.name"
@@ -89,8 +94,9 @@ const onTargetCard = (event: PointerEvent) => {
         :preview="project?.preview"
         :status="project.status"
         :type="project?.type"
+        :actions="actions"
         class="item"
-        @click="project.toggleTarget()"
+        @on-click="project.toggleTarget()"
       />
     </List>
   </template>

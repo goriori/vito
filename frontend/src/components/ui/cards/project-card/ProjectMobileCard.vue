@@ -3,22 +3,42 @@ import Card from '@/components/ui/cards/Card.vue'
 import Chip from '@/components/ui/chip/Chip.vue'
 
 type CProps = {
+  id: number
   preview: string
   title: string
   address: string
   status: string
   type: string
+  actions: object[]
+}
+type CEmits = {
+  (_eventName: 'onClick'): void
 }
 defineProps<CProps>()
+const emits = defineEmits<CEmits>()
 const serverUrl = window.API
+
+const onClick = () => {
+  emits('onClick')
+}
 </script>
 
 <template>
-  <Card rounded variant="quaternary" class="card" v-ripple>
-    <template #card-top> </template>
+  <Card @click="onClick" rounded variant="quaternary" class="card" v-ripple>
+    <template #card-top>
+      <div class="actions flex gap-2 flex-end" @click.stop>
+        <component
+          :is="action"
+          v-for="action in actions"
+          :key="action"
+          :data-id="id"
+        />
+      </div>
+    </template>
     <template #card-center>
       <div class="card-content">
-        <img :src="serverUrl + preview" alt="" />
+        <img v-if="preview" :src="serverUrl + preview" alt="" />
+        <img v-else src="/images/noimage.jpg" alt="" />
         <div class="card-group">
           <p class="card-title">{{ title }}</p>
           <p class="card-address">{{ address }}</p>
@@ -93,5 +113,9 @@ img {
   display: flex;
   justify-content: flex-end;
   gap: var(--space-sm);
+}
+
+.actions {
+  max-height: 20px;
 }
 </style>

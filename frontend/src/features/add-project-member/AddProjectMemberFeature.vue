@@ -82,7 +82,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <UsersButtonPopup :users="users" :is-loading="isLoading" class="feature" @on-target="addUserToProject" />
+  <UsersButtonPopup  :users="users" :is-loading="isLoading" class="feature" @on-target="addUserToProject" />
 </template>
 
 <style scoped lang="scss">

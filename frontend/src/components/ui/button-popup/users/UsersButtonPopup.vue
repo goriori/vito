@@ -19,7 +19,7 @@ const onTarget = (user: UserServer) => {
 </script>
 
 <template>
-  <ButtonPopup class="users-button-popup">
+  <ButtonPopup popup-position="top" class="users-button-popup">
     <template #popup>
       <UserList :users="users" class="list" @on-target="onTarget" />
     </template>
