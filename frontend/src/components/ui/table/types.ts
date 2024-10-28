@@ -1,7 +1,7 @@
 export type TProps = {
-    columns: string[]
-    rows: Array<string[]>
+  columns: string[]
+  rows: Array<string[]>
 }
 export type TEmits = {
-    (eventName: 'onTargetRow', row: string[]): void
+  (_eventName: 'onTargetRow', _row: string[]): void
 }

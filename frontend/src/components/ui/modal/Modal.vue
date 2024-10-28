@@ -9,11 +9,12 @@ const onClose = () => emits('onClickBackground')
 const onClickContent = () => emits('onClickContent')
 const onMount = () => emits('onMount')
 onMounted(() => {
-  tl.from('.popup-base', { scaleX: 5, scaleY: 10 }).from('.popup-content', {
+  tl.from('.popup-base', { scaleX: 5, scaleY: 10, duration: 0.3 }).from('.popup-content', {
     top: 0,
     scale: 0,
+    duration: 0.3,
+    onComplete: onMount,
   })
-  onMount()
 })
 </script>
 
@@ -31,7 +32,7 @@ onMounted(() => {
   &-base {
     position: fixed;
     inset: 0;
-    z-index: 100;
+    z-index: 90;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,67 +1,50 @@
 <script setup lang="ts">
 import Table from '@/components/ui/table/Table.vue'
+import { ProjectTable } from '@/services/projects/types.ts'
+import CreateProjectDetailsFeature from '@/features/create-project-details/CreateProjectDetailsFeature.vue'
+import DeleteProjectTableFeature from '@/features/delete-project-table/DeleteProjectTableFeature.vue'
+import AddTableItemFeature from '@/features/add-table-item-modal/AddTableItemModalFeature.vue'
+import { useSessionStore } from '@/stores/session.store.ts'
+import { ref } from 'vue'
 
 type PProps = {
-  details: object
+  projectId: number
+  details: {
+    tables: ProjectTable[]
+  }
 }
+defineProps<PProps>()
+const sessionStore = useSessionStore()
+const role = ref(sessionStore.getSession()?.role.name)
 </script>
 
 <template>
   <div class="project-details">
-    <h2 class="title">Детали проекта</h2>
-    <div class="tables">
-      <div class="table">
-        <h3>Таблица Закупок</h3>
+    <div class="details-header flex a-i-center between">
+      <h2 class="title">Детали проекта</h2>
+      <CreateProjectDetailsFeature v-if="role === 'director'" />
+    </div>
+    <div v-if="details.tables" class="tables">
+      <div v-for="table in details.tables" :key="table.id" class="table-item">
+        <div class="item-head flex between a-i-center">
+          <div></div>
+          <h3>{{ table.attributes.title }}</h3>
+          <div class="actions flex gap-1">
+            <AddTableItemFeature
+              v-if="role === 'director'"
+              :project-id="projectId"
+              :table-id="table.id"
+            />
+            <DeleteProjectTableFeature
+              v-if="role === 'director'"
+              :project-id="projectId"
+              :table-id="table.id"
+            />
+          </div>
+        </div>
         <Table
-          :columns="[
-            'Номер',
-            'Наименование',
-            'Количество',
-            'Цена за штуку',
-            'Конечная цена',
-            'Статус',
-          ]"
-          :rows="[
-            ['1', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['2', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['3', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['4', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['5', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['6', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['7', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['8', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['9', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['10', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['11', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['12', 'Гвоздь', '56', '5', '280', 'Заказано'],
-          ]"
-        />
-      </div>
-      <div class="table">
-        <h3>Таблица Материалов</h3>
-        <Table
-          :columns="[
-            'Номер',
-            'Наименование',
-            'Объем',
-            'Цена (кв.м)',
-            'Итого',
-            'Статус',
-          ]"
-          :rows="[
-            ['1', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['2', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['3', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['4', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['5', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['6', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['7', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['8', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['9', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['10', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['11', 'Гвоздь', '56', '5', '280', 'Заказано'],
-            ['12', 'Гвоздь', '56', '5', '280', 'Заказано'],
-          ]"
+          :columns="table.attributes.fields"
+          :rows="table.attributes.items || []"
         />
       </div>
     </div>
@@ -69,6 +52,8 @@ type PProps = {
 </template>
 
 <style scoped lang="scss">
+@import '@/assets/scss/variables';
+
 .project {
   &-details {
     display: flex;
@@ -86,15 +71,28 @@ type PProps = {
 }
 
 .tables {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   text-align: center;
   gap: var(--space-sm);
+  overflow-x: auto;
+
+  @media (max-width: $md1 + px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: $md2 + px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
-.table {
+.table-item {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+
+  .actions {
+    width: 60px;
+  }
 }
 </style>

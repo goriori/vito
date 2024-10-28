@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="15edbcc2-9711-43ce-8a87-7c437546bb6c" name="Changes" comment="feature:&#10;- create CreateTableFeature.vue&#10;- create table service&#10;&#10;build:&#10;- build new modal for create table&#10;- build form for create table&#10;&#10;change:&#10;- change error and success config. Add for message create table.&#10;- change z-index modal &#10;&#10;fix:&#10;- fix warnings">
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/noimage.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/globals/modals/add-item-table/AddItemTableModal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/globals/modals/confirm/ConfirmModal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/globals/modals/create/project/CreateProjectModal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/modules/project-setting/ProjectSettingModule.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ui/button-popup/settings/SettingButtonPopup.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ui/cards/add-project-card/AddProjectCard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ui/form/project/create/CreateProjectForm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ui/form/table-item/create/CreateTableItemForm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ui/icons/DotsIcon.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/add-project-image/AddProjectImageFeature.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/add-table-item-modal/AddTableItemModalFeature.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/add-table-item/AddTableItemFeature.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/create-project-modal/CreateProjectModalFeature.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/create-project/CreateProjectFeature.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/create-project/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/delete-project-card/DeleteProjectCardFeature.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/delete-project-table/DeleteProjectTableFeature.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/delete-project/DeleteProjectFeature.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/scss/bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/scss/bootstrap.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/modules/list/projects/ProjectListModule.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/modules/list/projects/ProjectListModule.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/project/project-details/ProjectDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/project/project-details/ProjectDetails.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/project/project-info/ProjectInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/project/project-info/ProjectInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/project/slider-project/SliderProject.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/project/slider-project/SliderProject.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/button-popup/users/UsersButtonPopup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/button-popup/users/UsersButtonPopup.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/button/Button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/button/Button.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/button/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/button/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/cards/project-card/ProjectCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/cards/project-card/ProjectCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/cards/project-card/ProjectMobileCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/cards/project-card/ProjectMobileCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/form/table/create/CreateTableForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/form/table/create/CreateTableForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/list/project-list/ProjectList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/list/project-list/ProjectList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/table/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/table/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/entities/project/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/entities/project/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/add-project-member/AddProjectMemberFeature.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/add-project-member/AddProjectMemberFeature.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/create-project-details/CreateProjectDetailsFeature.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/create-project-details/CreateProjectDetailsFeature.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/delete-project-member/DeleteProjectMemberFeature.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/delete-project-member/DeleteProjectMemberFeature.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/features/info-project-member-modal/InfoProjectMemberModalFeature.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/info-project-member-modal/InfoProjectMemberModalFeature.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/projects/Project.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/projects/Project.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/projects/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/projects/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/tables/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/tables/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/stores/app.store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/stores/app.store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/stores/list.store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/stores/list.store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/utils/configs/errors.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/configs/errors.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/utils/configs/success.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/configs/success.config.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+        <option value="Vue Options API Component" />
+        <option value="TypeScript File" />
+        <option value="Vue Composition API Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2lyULwM9SKV7KN6xwadzixJz0Bn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
+    "WebServerToolWindowPanel.toolwindow.show.date": "false",
+    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
+    "WebServerToolWindowPanel.toolwindow.show.size": "false",
+    "git-widget-placeholder": "dev",
+    "last_opened_file_path": "C:/goriori/github/my_projects/vito/frontend/public/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\goriori\\github\\my_projects\\vito\\frontend\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
+    "ts.external.directory.path": "C:\\goriori\\github\\my_projects\\vito\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "vue.recent.templates": [
+      "Vue Options API Component",
+      "Vue Composition API Component"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\goriori\github\my_projects\vito\frontend\public\images" />
+      <recent name="C:\goriori\github\my_projects\vito\frontend\src\factories\projects\status" />
+      <recent name="C:\goriori\github\my_projects\vito\frontend\src\pages" />
+      <recent name="C:\goriori\github\my_projects\vito\frontend" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\goriori\github\my_projects\vito\frontend\src\features\add-table-item-modal" />
+      <recent name="C:\goriori\github\my_projects\vito\frontend\src\components\globals\modals\confirm" />
+      <recent name="C:\goriori\github\my_projects\vito\frontend\public\images\account" />
+      <recent name="C:\goriori\github\my_projects\vito\frontend\public\images\projects" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="15edbcc2-9711-43ce-8a87-7c437546bb6c" name="Changes" comment="" />
+      <created>1726151757649</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726151757649</updated>
+      <workItem from="1726151758716" duration="2312000" />
+      <workItem from="1726154155425" duration="19000" />
+      <workItem from="1726207322179" duration="27000" />
+      <workItem from="1726230302912" duration="2382000" />
+      <workItem from="1726233547847" duration="28000" />
+      <workItem from="1726288884575" duration="5375000" />
+      <workItem from="1726377547847" duration="7534000" />
+      <workItem from="1726390359436" duration="1538000" />
+      <workItem from="1726413491871" duration="124000" />
+      <workItem from="1726466002858" duration="3460000" />
+      <workItem from="1726471571687" duration="2228000" />
+      <workItem from="1726479485309" duration="4000" />
+      <workItem from="1726486995445" duration="5875000" />
+      <workItem from="1726493034421" duration="804000" />
+      <workItem from="1726503328825" duration="2267000" />
+      <workItem from="1726552888806" duration="443000" />
+      <workItem from="1726565740682" duration="752000" />
+      <workItem from="1726567690572" duration="239000" />
+      <workItem from="1726744150310" duration="210000" />
+      <workItem from="1726744416702" duration="8376000" />
+      <workItem from="1726802327892" duration="6482000" />
+      <workItem from="1726834861866" duration="8804000" />
+      <workItem from="1726845758472" duration="1222000" />
+      <workItem from="1726895218853" duration="3170000" />
+      <workItem from="1726919454498" duration="9332000" />
+      <workItem from="1727069388672" duration="58000" />
+      <workItem from="1727095239621" duration="3829000" />
+      <workItem from="1727157149787" duration="3500000" />
+      <workItem from="1727263635060" duration="3106000" />
+      <workItem from="1727273635480" duration="51000" />
+      <workItem from="1727341588358" duration="5000" />
+      <workItem from="1728469974378" duration="86000" />
+      <workItem from="1728488727432" duration="6706000" />
+      <workItem from="1728540119597" duration="7000" />
+      <workItem from="1728548335473" duration="3988000" />
+      <workItem from="1728558151799" duration="100000" />
+      <workItem from="1728576785692" duration="4311000" />
+      <workItem from="1728616634078" duration="2308000" />
+      <workItem from="1728618994822" duration="113000" />
+      <workItem from="1728627149493" duration="9000" />
+      <workItem from="1728663293973" duration="4455000" />
+      <workItem from="1728728343726" duration="5759000" />
+      <workItem from="1728747741249" duration="3084000" />
+      <workItem from="1728802471885" duration="2857000" />
+      <workItem from="1728834080882" duration="2924000" />
+      <workItem from="1728886991277" duration="7000" />
+      <workItem from="1728911122389" duration="2127000" />
+      <workItem from="1728920788060" duration="4357000" />
+      <workItem from="1728972698475" duration="15000" />
+      <workItem from="1728990371760" duration="4543000" />
+      <workItem from="1729006059601" duration="1889000" />
+      <workItem from="1729010842098" duration="2159000" />
+      <workItem from="1729058412324" duration="6000" />
+      <workItem from="1729092007920" duration="7195000" />
+      <workItem from="1729144461091" duration="262000" />
+      <workItem from="1729154333037" duration="2216000" />
+      <workItem from="1729230307840" duration="4938000" />
+      <workItem from="1729316178953" duration="472000" />
+      <workItem from="1729316908588" duration="1799000" />
+      <workItem from="1729345496749" duration="6615000" />
+      <workItem from="1729438644023" duration="9100000" />
+      <workItem from="1729492380794" duration="5777000" />
+      <workItem from="1729604373541" duration="2599000" />
+      <workItem from="1729607396145" duration="841000" />
+      <workItem from="1729609990601" duration="10056000" />
+      <workItem from="1729656688162" duration="12367000" />
+      <workItem from="1729689371886" duration="13834000" />
+      <workItem from="1729771781467" duration="7000" />
+      <workItem from="1729838186075" duration="22550000" />
+      <workItem from="1730044598407" duration="5836000" />
+      <workItem from="1730098568211" duration="102000" />
+      <workItem from="1730104946284" duration="4369000" />
+      <workItem from="1730117657428" duration="8278000" />
+    </task>
+    <task id="LOCAL-00001" summary="init project">
+      <option name="closed" value="true" />
+      <created>1726153103666</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1726153103666</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feature:&#10;- create optimization auto run projects">
+      <option name="closed" value="true" />
+      <created>1726154022877</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1726154022877</updated>
+    </task>
+    <task id="LOCAL-00003" summary="change:&#10;- update files frontend application template">
+      <option name="closed" value="true" />
+      <created>1726230384586</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1726230384586</updated>
+    </task>
+    <task id="LOCAL-00004" summary="refactoring:&#10;- decomposition types on new file type.ts ui components">
+      <option name="closed" value="true" />
+      <created>1726291534990</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1726291534990</updated>
+    </task>
+    <task id="LOCAL-00005" summary="force update">
+      <option name="closed" value="true" />
+      <created>1726744515572</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1726744515572</updated>
+    </task>
+    <task id="LOCAL-00006" summary="force update">
+      <option name="closed" value="true" />
+      <created>1729438674893</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1729438674893</updated>
+    </task>
+    <task id="LOCAL-00007" summary="build:&#10;- create layouts: default, session.&#10;&#10;feature:&#10;- create loadProjects&#10;&#10;change:&#10;- change import logistics in components.&#10;&#10;style:&#10;- change color in header component.">
+      <option name="closed" value="true" />
+      <created>1729441764723</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1729441764723</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feature:&#10;- create check session for default layout&#10;- create redirect to projects page if have session.&#10;- add open error if call catch block request project or jwtToken undefined">
+      <option name="closed" value="true" />
+      <created>1729443362282</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1729443362282</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feature:&#10;- create check projects in projects module&#10;- create method for get token permission">
+      <option name="closed" value="true" />
+      <created>1729444251421</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1729444251421</updated>
+    </task>
+    <task id="LOCAL-00010" summary="change:&#10;- change function load projects (add valid length list project)">
+      <option name="closed" value="true" />
+      <created>1729444625833</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1729444625833</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feature:&#10;- create member user adapter&#10;- add methods for get members and toggle target state project&#10;- add service project method update data&#10;&#10;change:&#10;- lint and prettier code.&#10;- decomposition function for imperial function">
+      <option name="closed" value="true" />
+      <created>1729492851494</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1729492851494</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feature:&#10;- add filtering users list for feature who are not part of the project&#10;&#10;change:&#10;- decomposition function height order &#10;- change paint user list if users length === 0&#10;&#10;style:&#10;- change style width popup for UserButtonPopup.vue">
+      <option name="closed" value="true" />
+      <created>1729497860410</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1729497860410</updated>
+    </task>
+    <task id="LOCAL-00013" summary="build:&#10;- create entities server">
+      <option name="closed" value="true" />
+      <created>1729497920449</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1729497920449</updated>
+    </task>
+    <task id="LOCAL-00014" summary="change:&#10;- change class session layout.&#10;- change animation name for transition page">
+      <option name="closed" value="true" />
+      <created>1729604438262</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1729604438262</updated>
+    </task>
+    <task id="LOCAL-00015" summary="change:&#10;- change classes account page (on mobile and desktop sections)&#10;- change ref on computed load users &#10;- lint and prettier code &#10;- change api url&#10;- change position text alerts&#10;&#10;build:&#10;- create modal add member project&#10;- create project title for project info component&#10;&#10;style:&#10;- add max height user button popup&#10;- add wrap list members&#10;- add adaptive project page and account">
+      <option name="closed" value="true" />
+      <created>1729661796565</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1729661796565</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feature:&#10;- create feature add project member modal&#10;- add clear user list when call hook on unmounted &#10;- add render feature of size window project info&#10;&#10;change:&#10;- change position right account menu">
+      <option name="closed" value="true" />
+      <created>1729663598810</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1729663598810</updated>
+    </task>
+    <task id="LOCAL-00017" summary="change:&#10;- change animation account menu finish position">
+      <option name="closed" value="true" />
+      <created>1729663679219</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1729663679219</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feature:&#10;- create feature aadd user to project in AddMemberModal.vue.&#10;- add clear user list when call hook on unmount AddProjectMemberFeature.vue">
+      <option name="closed" value="true" />
+      <created>1729665048300</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1729665048300</updated>
+    </task>
+    <task id="LOCAL-00019" summary="feature:&#10;- create member button popup ui component&#10;- create ui  member with actions list&#10;- create module member project edit list for role director&#10;&#10;change:&#10;- add module component to member list project info  &#10;- rename used component PersonList &#10;- change position member chip, rewrite on flex - start&#10;- change users in AddProjectMemberFeature.vue  on ref and change get jwtToken">
+      <option name="closed" value="true" />
+      <created>1729669398882</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1729669398882</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feature:&#10;- create DeleteProjectMemberFeature.vue&#10;- create InfoProjectMemberModalFeature.vue&#10;- create validating session on life call loop router&#10;&#10;build:&#10;- build InfoButton.vue&#10;- build InfoIcon.vue&#10;- build DeleteButton.vue&#10;&#10;change:&#10;- change ref on computed users list in AddProjectMemberFeature.vue&#10;- change button base ui component&#10;- change popup width and padding space &#10;- change actions MemberProjectEditListModule.vue">
+      <option name="closed" value="true" />
+      <created>1729701386094</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1729701386094</updated>
+    </task>
+    <task id="LOCAL-00021" summary="feature:&#10;- create InfoProjectMemberModalFeature.vue&#10;- create show adaptive device member list&#10;- create show map coordinates location of projects coordinates &#10;&#10;change:&#10;- change MemberProjectAdapter and MemberUserAdapter converting field  skills &#10;- change type skills entity Member&#10;- change params populate service projects&#10;- change MemberProjectEditListModule.vue (add settings projectId for InfoProjectMemberModalFeature.vue&#10;&#10;build:&#10;- build MemberInfoModal.vue">
+      <option name="closed" value="true" />
+      <created>1729839249118</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1729839249118</updated>
+    </task>
+    <task id="LOCAL-00022" summary="change:&#10;- change structure button popup. Add props popup position: left,right,top, top-left, top-right,bottom, bottom-left, bottom-right.&#10;- change member button popup component. Add props popup position.&#10;- change name folder projecs-filter to projects-filter.">
+      <option name="closed" value="true" />
+      <created>1729842784110</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1729842784110</updated>
+    </task>
+    <task id="LOCAL-00023" summary="feature:&#10;- create CreateProjectDetailsFeature.vue&#10;- create ProjectLocationMapModule.vue&#10;&#10;build:&#10;- build CreateTableForm.vue">
+      <option name="closed" value="true" />
+      <created>1729842837193</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1729842837193</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feature:&#10;- add load projects session layout if not have url param pageId.">
+      <option name="closed" value="true" />
+      <created>1729842900107</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1729842900107</updated>
+    </task>
+    <task id="LOCAL-00025" summary="change:&#10;- change print width prettier on default value&#10;- decomposition project page (move out yandex map)&#10;- change paths">
+      <option name="closed" value="true" />
+      <created>1729842991135</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1729842991135</updated>
+    </task>
+    <task id="LOCAL-00026" summary="feature:&#10;- create CreateTableFeature.vue&#10;- create table service&#10;&#10;build:&#10;- build new modal for create table&#10;- build form for create table&#10;&#10;change:&#10;- change error and success config. Add for message create table.&#10;- change z-index modal &#10;&#10;fix:&#10;- fix warnings">
+      <option name="closed" value="true" />
+      <created>1729855995525</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1729855995525</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/frontend/src/directives/vRipple.js" />
+        <option value="$PROJECT_DIR$/frontend/src/directives/vClickOutside.js" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feature:&#10;- create optimization auto run projects" />
+    <MESSAGE value="change:&#10;- update files frontend application template" />
+    <MESSAGE value="refactoring:&#10;- decomposition types on new file type.ts ui components" />
+    <MESSAGE value="update" />
+    <MESSAGE value="force update" />
+    <MESSAGE value="build:&#10;- create layouts: default, session.&#10;&#10;feature:&#10;- create loadProjects&#10;&#10;change:&#10;- change import logistics in components.&#10;&#10;style:&#10;- change color in header component." />
+    <MESSAGE value="feature:&#10;- create check session for default layout&#10;- create redirect to projects page if have session.&#10;- add open error if call catch block request project or jwtToken undefined" />
+    <MESSAGE value="feature:&#10;- create check projects in projects module&#10;- create method for get token permission" />
+    <MESSAGE value="change:&#10;- change function load projects (add valid length list project)" />
+    <MESSAGE value="feature:&#10;- create member user adapter&#10;- add methods for get members and toggle target state project&#10;- add service project method update data&#10;&#10;change:&#10;- lint and prettier code.&#10;- decomposition function for imperial function" />
+    <MESSAGE value="feature:&#10;- add filtering users list for feature who are not part of the project&#10;&#10;change:&#10;- decomposition function height order &#10;- change paint user list if users length === 0&#10;&#10;style:&#10;- change style width popup for UserButtonPopup.vue" />
+    <MESSAGE value="build:&#10;- create entities server" />
+    <MESSAGE value="change:&#10;- change class session layout.&#10;- change animation name for transition page" />
+    <MESSAGE value="change:&#10;- change classes account page (on mobile and desktop sections)&#10;- change ref on computed load users &#10;- lint and prettier code &#10;- change api url&#10;- change position text alerts&#10;&#10;build:&#10;- create modal add member project&#10;- create project title for project info component&#10;&#10;style:&#10;- add max height user button popup&#10;- add wrap list members&#10;- add adaptive project page and account" />
+    <MESSAGE value="feature:&#10;- create feature add project member modal&#10;- add clear user list when call hook on unmounted &#10;- add render feature of size window project info&#10;&#10;change:&#10;- change position right account menu" />
+    <MESSAGE value="change:&#10;- change animation account menu finish position" />
+    <MESSAGE value="feature:&#10;- create feature aadd user to project in AddMemberModal.vue.&#10;- add clear user list when call hook on unmount AddProjectMemberFeature.vue" />
+    <MESSAGE value="feature:&#10;- create member button popup ui component&#10;- create ui  member with actions list&#10;- create module member project edit list for role director&#10;&#10;change:&#10;- add module component to member list project info  &#10;- rename used component PersonList &#10;- change position member chip, rewrite on flex - start&#10;- change users in AddProjectMemberFeature.vue  on ref and change get jwtToken" />
+    <MESSAGE value="feature:&#10;- create DeleteProjectMemberFeature.vue&#10;- create InfoProjectMemberModalFeature.vue&#10;- create validating session on life call loop router&#10;&#10;build:&#10;- build InfoButton.vue&#10;- build InfoIcon.vue&#10;- build DeleteButton.vue&#10;&#10;change:&#10;- change ref on computed users list in AddProjectMemberFeature.vue&#10;- change button base ui component&#10;- change popup width and padding space &#10;- change actions MemberProjectEditListModule.vue" />
+    <MESSAGE value="feature:&#10;- create InfoProjectMemberModalFeature.vue&#10;- create show adaptive device member list&#10;- create show map coordinates location of projects coordinates &#10;&#10;change:&#10;- change MemberProjectAdapter and MemberUserAdapter converting field  skills &#10;- change type skills entity Member&#10;- change params populate service projects&#10;- change MemberProjectEditListModule.vue (add settings projectId for InfoProjectMemberModalFeature.vue&#10;&#10;build:&#10;- build MemberInfoModal.vue" />
+    <MESSAGE value="change:&#10;- change structure button popup. Add props popup position: left,right,top, top-left, top-right,bottom, bottom-left, bottom-right.&#10;- change member button popup component. Add props popup position.&#10;- change name folder projecs-filter to projects-filter." />
+    <MESSAGE value="feature:&#10;- create CreateProjectDetailsFeature.vue&#10;- create ProjectLocationMapModule.vue&#10;&#10;build:&#10;- build CreateTableForm.vue" />
+    <MESSAGE value="feature:&#10;- add load projects session layout if not have url param pageId." />
+    <MESSAGE value="change:&#10;- change print width prettier on default value&#10;- decomposition project page (move out yandex map)&#10;- change paths" />
+    <MESSAGE value="feature:&#10;- create CreateTableFeature.vue&#10;- create table service&#10;&#10;build:&#10;- build new modal for create table&#10;- build form for create table&#10;&#10;change:&#10;- change error and success config. Add for message create table.&#10;- change z-index modal &#10;&#10;fix:&#10;- fix warnings" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature:&#10;- create CreateTableFeature.vue&#10;- create table service&#10;&#10;build:&#10;- build new modal for create table&#10;- build form for create table&#10;&#10;change:&#10;- change error and success config. Add for message create table.&#10;- change z-index modal &#10;&#10;fix:&#10;- fix warnings" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/services/tables/index.ts</url>
+          <line>5</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/components/globals/modals/create/project/CreateProjectModal.vue</url>
+          <line>8</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

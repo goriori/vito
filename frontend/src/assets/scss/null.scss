@@ -44,7 +44,11 @@ html,
 body {
   height: 100%;
   color: $black;
+  overflow-x: hidden;
   @include scrollbar();
+  @media (max-width: 600px) {
+    @include no-scroll();
+  }
 }
 
 body {
@@ -88,4 +92,8 @@ a:hover {
 
 img {
   vertical-align: top;
+}
+
+p {
+  line-height: normal;
 }

@@ -2,7 +2,7 @@
 import Modal from '@/components/ui/modal/Modal.vue'
 
 type MEmits = {
-  (eventName: 'onClose'): void
+  (_eventName: 'onClose'): void
 }
 const emits = defineEmits<MEmits>()
 const onClose = () => emits('onClose')
@@ -23,6 +23,7 @@ const onClose = () => emits('onClose')
   max-width: 300px;
   padding: 20px;
   border: 1px solid black;
+  background-color: white;
   border-radius: 20px;
 }
 </style>

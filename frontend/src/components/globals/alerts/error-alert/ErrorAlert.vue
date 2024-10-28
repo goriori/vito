@@ -5,7 +5,7 @@ type AProps = {
   message: string
 }
 type AEmits = {
-  (eventName: 'onClose'): void
+  (_eventName: 'onClose'): void
 }
 defineProps<AProps>()
 const emits = defineEmits<AEmits>()
@@ -13,9 +13,13 @@ const onClose = () => emits('onClose')
 </script>
 
 <template>
-  <Alert color="error" @on-click="onClose" @on-time-out="onClose">
+  <Alert color="error" class="alert" @on-click="onClose" @on-time-out="onClose">
     {{ message }}
   </Alert>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.alert {
+  text-align: center;
+}
+</style>

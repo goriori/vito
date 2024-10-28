@@ -5,10 +5,13 @@
   max-width: 1700px;
   margin: 0 auto;
   @media (max-width: $md1 + px) {
+    max-width: 1500px;
   }
   @media (max-width: $md2 + px) {
+    max-width: 1000px;
   }
   @media (max-width: $md3 + px) {
+
   }
   @media (max-width: $md4 + px) {
   }
